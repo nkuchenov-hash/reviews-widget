@@ -9,8 +9,8 @@ from urllib.request import Request, urlopen
 BUSINESS_ID=os.getenv('YANDEX_BUSINESS_ID','136853819595')
 SLUG=os.getenv('YANDEX_SLUG','studiya_avtoportreta_etnika')
 BASE='https://yandex.com'
-OUT='data/reviews.json'
-MAX_PAGES=12
+OUT=os.getenv('OUT','data/reviews.json')
+MAX_PAGES=int(os.getenv('MAX_PAGES','12'))
 UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
 
 class Scripts(HTMLParser):
@@ -176,7 +176,8 @@ def main():
         'fetchedAt':datetime.now(timezone.utc).isoformat(),
         'reviews':list(by_id.values())
     }
-    os.makedirs(os.path.dirname(OUT),exist_ok=True)
+    out_dir=os.path.dirname(OUT)
+    if out_dir: os.makedirs(out_dir,exist_ok=True)
     with open(OUT,'w',encoding='utf-8') as f: json.dump(out,f,ensure_ascii=False,indent=2)
-    print(f"Saved {len(by_id)} reviews")
+    print(f"Saved {len(by_id)} reviews to {OUT}")
 if __name__=='__main__':main()
