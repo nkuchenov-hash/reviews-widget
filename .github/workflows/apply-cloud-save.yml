@@ -1,0 +1,119 @@
+name: Apply cloud save
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-cloud-save.yml'
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch builder
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('builder.js')
+          s=p.read_text(encoding='utf-8')
+
+          s=s.replace("const SOURCE_URL='./data/projects/'+encodeURIComponent(PROJECT_ID)+'.json';", """const SOURCE_URL='./data/projects/'+encodeURIComponent(PROJECT_ID)+'.json';
+          const PROJECT_CONFIG_URL='./projects/'+encodeURIComponent(PROJECT_ID)+'.json';
+          const API_BASE=String(window.REVIEWS_WIDGET_API||'').replace(/\\/$/,'');
+          const PROJECT_TOKEN_KEY='URW_PROJECT_TOKEN_'+PROJECT_ID;
+          function projectToken(){return sessionStorage.getItem(PROJECT_TOKEN_KEY)||''}
+          function rememberProjectToken(v){if(v)sessionStorage.setItem(PROJECT_TOKEN_KEY,v)}
+          function parseYandexOrgUrl(value){
+            try{
+              const u=new URL(String(value||'').trim());
+              if(!/(^|\\.)yandex\\.(ru|com)$/i.test(u.hostname))return null;
+              const m=u.pathname.match(/\\/maps\\/org\\/([^/]+)\\/(\\d+)/i);
+              if(!m)return null;
+              return {slug:decodeURIComponent(m[1]),businessId:m[2],businessUrl:`https://yandex.ru/maps/org/${m[1]}/${m[2]}/reviews/`};
+            }catch{return null}
+          }
+          async function fetchProjectConfig(){
+            const url=API_BASE?`${API_BASE}/api/projects/${encodeURIComponent(PROJECT_ID)}`:PROJECT_CONFIG_URL;
+            const r=await fetch(url+'?v='+Date.now(),{cache:'no-store'});
+            if(!r.ok)throw new Error(`Project HTTP ${r.status}`);
+            return r.json();
+          }
+          async function saveProjectRemote(snapshot){
+            if(!API_BASE)return null;
+            let token=projectToken();
+            if(!token){token=String(prompt('Введите ключ доступа к проекту')||'').trim();rememberProjectToken(token)}
+            if(!token)throw new Error('Нужен ключ доступа к проекту.');
+            const r=await fetch(`${API_BASE}/api/projects/${encodeURIComponent(PROJECT_ID)}`,{
+              method:'PUT',headers:{'Content-Type':'application/json','X-Project-Token':token},body:JSON.stringify(snapshot)
+            });
+            const j=await r.json().catch(()=>({}));
+            if(r.status===401){sessionStorage.removeItem(PROJECT_TOKEN_KEY);throw new Error('Неверный ключ доступа к проекту.')}
+            if(!r.ok)throw new Error(j.error||`HTTP ${r.status}`);
+            return j.project||null;
+          }""")
+
+          s=s.replace("const defaults={source:{provider:'yandex',businessId:ETNIKA_YANDEX_ID,businessUrl:ETNIKA_YANDEX_URL},", "const defaults={source:{provider:'yandex',businessId:ETNIKA_YANDEX_ID,slug:'studiya_avtoportreta_etnika',businessUrl:ETNIKA_YANDEX_URL},")
+
+          new_load="""async function load(){try{
+            let saved=null,remote=null;
+            const raw=localStorage.getItem(storageKey())||localStorage.getItem(oldStorageKey());
+            if(raw){try{saved=JSON.parse(raw)}catch{}}
+            try{remote=await fetchProjectConfig()}catch(e){console.warn('[Reviews Widget] project config',e)}
+            if(!saved&&remote)saved=remote;
+            if(saved){
+              moderation=saved.moderation||{};
+              data={...structuredClone(defaults),...saved,source:{...defaults.source,...(saved.source||{})},display:{...defaults.display,...(saved.display||{})},design:{...defaults.design,...(saved.design||{})},content:{...defaults.content,...(saved.content||{})},reviews:[]};
+            }else data=structuredClone(defaults);
+            data.source.provider='yandex';
+            const parsed=parseYandexOrgUrl(data.source.businessUrl);
+            if(parsed)data.source={...data.source,...parsed,provider:'yandex'};
+            const savedButton=String(data.content?.buttonUrl||'');
+            if(!savedButton||(/^https?:\\/\\/(?:www\\.)?yandex\\.(?:ru|com)\\/maps\\/org\\/.*\\/reviews\\/?$/i.test(savedButton)))data.content.buttonUrl=reviewFormUrl(data.source.businessUrl,data.source.businessId);
+            await fetchSource();refreshDesignList();fill();render();
+            setStatus(sourceMeta?`Загружено ${sourceMeta.reviews.length} отзывов из Яндекс Карт.`:'Источник выбран: Яндекс Карты. Реальные данные ещё не синхронизированы; показан предпросмотр.',sourceMeta?'ok':'err')
+          }catch(e){setStatus(e.message,'err')}}"""
+          s=re.sub(r"async function load\(\)\{.*?\nfunction familyFromControls",new_load+"\nfunction familyFromControls",s,flags=re.S)
+
+          new_collect="""function collect(){
+            const rawUrl=$('businessUrl').value.trim()||data.source?.businessUrl||ETNIKA_YANDEX_URL;
+            const parsed=parseYandexOrgUrl(rawUrl);
+            if(parsed){$('businessId').value=parsed.businessId;data.source={provider:'yandex',...parsed}}
+            else data.source={provider:'yandex',businessId:$('businessId').value.trim()||data.source?.businessId||ETNIKA_YANDEX_ID,slug:data.source?.slug||'',businessUrl:rawUrl};
+            data.display={mode:$('displayMode').value};const d={...(data.design||{})};designKeys.forEach(k=>{if(!$(k))return;if(colorKeys.includes(k))d[k]=normalizeHex($(k).value)||d[k]||defaults.design[k];else if(k==='layout')d[k]=$(k).value;else d[k]=Number($(k).value)});const layout=$('layout').value;if(layout==='grid')d.gridInitialItems=Math.max(1,Number($('initialItems').value)||6);if(layout==='list')d.listInitialItems=Math.max(1,Number($('initialItems').value)||3);d.autoplayDelay=Math.round(Math.max(1.2,Number($('autoplaySeconds').value)||4.5)*1000);d.fontFamily=familyFromControls('font');d.titleFontFamily=familyFromControls('titleFont');d.fontCssUrl=$('fontCssUrl').value.trim();const fp=$('fontPreset').value,tp=$('titleFontPreset').value;if(!d.fontCssUrl&&(['geologica','inter'].includes(fp)||['forum','geologica','inter'].includes(tp)))d.fontCssUrl=GOOGLE_FONTS;boolKeys.forEach(k=>d[k]=Boolean($(k)?.checked));data.design=d;data.content={...(data.content||{}),title:$('title').value,subtitle:$('subtitle').value,buttonText:$('buttonText').value,buttonUrl:$('buttonUrl').value.trim()||reviewFormUrl(data.source.businessUrl,data.source.businessId),showHeader:true}}
+          """
+          s=re.sub(r"function collect\(\)\{.*?\nfunction updateFontUI",new_collect+"\nfunction updateFontUI",s,flags=re.S)
+
+          new_save="""async function save(show=true){
+            collect();saveModeration();
+            const snapshot={source:data.source,display:data.display,design:data.design,content:data.content,moderation};
+            localStorage.setItem(storageKey(),JSON.stringify(snapshot));
+            if(API_BASE){
+              try{
+                const remote=await saveProjectRemote(snapshot);
+                if(remote){localStorage.setItem(storageKey(),JSON.stringify({...snapshot,savedAt:remote.updatedAt||new Date().toISOString()}))}
+                if(show)setStatus('Сохранено онлайн. Виджет на сайте обновится автоматически после публикации проекта.','ok');
+                sourceUI();return true;
+              }catch(e){if(show)setStatus(e.message,'err');sourceUI();return false}
+            }
+            if(show)setStatus('Настройки сохранены локально. Для облачного сохранения нужно подключить backend.','ok');sourceUI();return true
+          }"""
+          s=re.sub(r"function save\(show=true\)\{.*?\nfunction saveNamedDesign",new_save+"\nfunction saveNamedDesign",s,flags=re.S)
+
+          new_embed="""function embedCode(){
+            const base=STATIC_MODE?location.href.replace(/[^/]*$/,''):`${location.origin}/`;
+            return `<div data-reviews-project=\\"${escapeHtml(PROJECT_ID)}\\"></div>\\n<script src=\\"${base}embed.js\\" defer><\\/script>`
+          }"""
+          s=re.sub(r"function embedCode\(\)\{.*?\nfunction setPreview",new_embed+"\nfunction setPreview",s,flags=re.S)
+
+          s=s.replace("$('layout').addEventListener('change',()=>{updateLayoutUI();render()});", "$('layout').addEventListener('change',()=>{updateLayoutUI();render()});$('businessUrl').addEventListener('change',()=>{const p=parseYandexOrgUrl($('businessUrl').value);if(p){$('businessId').value=p.businessId;data.source={provider:'yandex',...p};data.content.buttonUrl=reviewFormUrl(p.businessUrl,p.businessId);$('buttonUrl').value=data.content.buttonUrl;setStatus('Организация Яндекс определена. Нажмите «Сохранить».','ok')}else setStatus('Не удалось определить организацию. Вставьте полную ссылку вида yandex.ru/maps/org/.../123456/...','err')});")
+
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit cloud save migration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add builder.js
+          git commit -m "Connect builder to project API"
+          git push
