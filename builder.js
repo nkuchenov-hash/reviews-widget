@@ -7,13 +7,14 @@ const sampleReviews=[{id:'preview-1',author:'Предпросмотр',rating:5,
 const defaults={source:{provider:'yandex',businessId:ETNIKA_YANDEX_ID,businessUrl:ETNIKA_YANDEX_URL},display:{mode:'custom'},design:{layout:'slider',columns:3,tabletColumns:2,mobileColumns:1,gap:12,radius:14,maxWidth:1200,fontFamily:'inherit',titleFontFamily:'inherit',fontCssUrl:'',titleSize:38,mobileTitleSize:30,bodySize:15,bodyWeight:400,titleWeight:500,strongWeight:500,cardPadding:18,buttonRadius:10,borderWidth:1,minRating:1,maxTextLines:6,gridInitialItems:6,listInitialItems:3,loadMoreStep:6,autoplay:true,autoplayDelay:4500,transitionMs:320,accent:'#111111',background:'#ffffff',cardBackground:'#ffffff',textColor:'#202124',mutedColor:'#7a7d81',borderColor:'#e5e7eb',starColor:'#f5a623',showAvatar:true,showDate:true,showSource:true,showSummary:true,showMedia:true,showBusinessResponse:true,showReactions:true,yandexHeight:620},content:{title:'Отзывы клиентов',subtitle:'Яндекс Карты',buttonText:'Оставить отзыв',buttonUrl:ETNIKA_REVIEW_URL,showHeader:true},reviews:[]};
 let data=structuredClone(defaults),inst,sourceMeta=null,usingPreview=false,moderation={};
 const STATIC_MODE=location.hostname.endsWith('github.io')||location.protocol==='file:';
-const SOURCE_URL='./data/reviews.json';
+const PROJECT_ID=(new URLSearchParams(location.search).get('project')||'etnika').trim();
+const SOURCE_URL='./data/projects/'+encodeURIComponent(PROJECT_ID)+'.json';
 const designKeys=['layout','columns','tabletColumns','mobileColumns','radius','gap','maxWidth','cardPadding','borderWidth','buttonRadius','minRating','maxTextLines','loadMoreStep','transitionMs','titleSize','mobileTitleSize','bodySize','bodyWeight','titleWeight','strongWeight','accent','background','cardBackground','textColor','borderColor','starColor','yandexHeight'];
 const boolKeys=['showAvatar','showDate','showSource','showSummary','showMedia','showBusinessResponse','showReactions','autoplay'];
 const colorKeys=['accent','background','cardBackground','starColor','textColor','borderColor'];
 const familyMap={inherit:'inherit',geologica:'Geologica,Arial,sans-serif',inter:'Inter,Arial,sans-serif',arial:'Arial,sans-serif',georgia:'Georgia,serif',forum:'Forum,Georgia,serif'};
-function storageKey(){return 'URW_WIDGET_V7_demo'}
-function oldStorageKey(){return 'URW_WIDGET_V6_demo'}
+function storageKey(){return 'URW_WIDGET_V8_'+PROJECT_ID}
+function oldStorageKey(){return 'URW_WIDGET_V7_'+PROJECT_ID}
 function designsKey(){return 'URW_SAVED_DESIGNS_V1'}
 function setStatus(s,c=''){const el=$('status');el.textContent=s;el.className='status '+c}
 function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
