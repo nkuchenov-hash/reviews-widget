@@ -3,6 +3,7 @@ import json, os, time
 from datetime import datetime, timezone
 from html import unescape
 from html.parser import HTMLParser
+from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 BUSINESS_ID=os.getenv('YANDEX_BUSINESS_ID','136853819595')
@@ -74,6 +75,7 @@ def normalize(raw):
     if not rid:return None
     a=raw.get('author')
     author=a.get('name') if isinstance(a,dict) else a
+    public_id=str(a.get('publicId') or '') if isinstance(a,dict) else ''
     avatar=avatar_url(a.get('avatarUrl') or a.get('avatar') or a.get('photoUrl')) if isinstance(a,dict) else ''
     profession=(a.get('professionLevel') or a.get('rtb') or '') if isinstance(a,dict) else ''
 
@@ -92,10 +94,13 @@ def normalize(raw):
     reactions=raw.get('reactions') if isinstance(raw.get('reactions'),dict) else {}
     created=raw.get('createdTime') or raw.get('time') or ''
     updated=raw.get('updatedTime') or created
+    general_url=f'https://yandex.ru/maps/org/{SLUG}/{BUSINESS_ID}/reviews/'
+    review_url=(f'{general_url}?reviews%5BpublicId%5D={quote(public_id)}&utm_source=review' if public_id else general_url)
 
     return {
         'id':rid,
         'author':author or 'Пользователь Яндекса',
+        'authorPublicId':public_id,
         'authorLevel':profession,
         'avatar':avatar,
         'rating':int(raw.get('rating') or 0),
@@ -104,7 +109,7 @@ def normalize(raw):
         'createdDate':created,
         'edited':bool(created and updated and created!=updated),
         'source':'yandex',
-        'url':f'https://yandex.com/maps/org/{SLUG}/{BUSINESS_ID}/reviews/',
+        'url':review_url,
         'likes':int(reactions.get('likes') or 0),
         'dislikes':int(reactions.get('dislikes') or 0),
         'photos':photos,
@@ -165,7 +170,7 @@ def main():
         time.sleep(.4)
     if not by_id: raise RuntimeError('No reviews extracted from Yandex')
     out={
-        'source':{'provider':'yandex','businessId':BUSINESS_ID,'businessUrl':f'https://yandex.com/maps/org/{SLUG}/{BUSINESS_ID}/reviews/'},
+        'source':{'provider':'yandex','businessId':BUSINESS_ID,'businessUrl':f'https://yandex.ru/maps/org/{SLUG}/{BUSINESS_ID}/reviews/'},
         'summary':summary,
         'profile':profile,
         'fetchedAt':datetime.now(timezone.utc).isoformat(),
