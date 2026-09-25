@@ -1,8 +1,94 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Universal Reviews — Widget Builder</title>
 <link rel="stylesheet" href="builder.css"></head><body>
-<div class="app"><aside class="side"><div class="brand">Universal Reviews</div><div class="sub">Конструктор управляемого виджета отзывов. Полный дизайн работает в режиме «Управляемый».</div><div class="tabs"><button class="tab on" data-tab="source">Источник</button><button class="tab" data-tab="reviews">Отзывы</button><button class="tab" data-tab="design">Дизайн</button></div>
-<section class="pane on" data-pane="source"><div class="group"><h3>Режим</h3><div class="field"><label>Источник</label><select id="sourceType"><option value="manual">Управляемый — полный дизайн</option><option value="json">JSON/API — полный дизайн</option><option value="yandex-live">Яндекс Live — ограниченный iframe</option></select></div><div id="managedInfo" class="notice"><b>Полный режим:</b> шрифт, колонки, радиусы, цвета, карточки, закрепление и скрытие работают полностью.</div><div id="yandexFields" style="display:none"><div class="field"><label>Business ID Яндекс</label><input id="businessId" placeholder="например 226327670406"></div><div class="field"><label>Ссылка на организацию</label><input id="businessUrl" placeholder="https://yandex.ru/maps/org/.../"></div><div class="notice bad"><b>Ограничение:</b> Яндекс отдаёт iframe. Шрифт, колонки и дизайн внутренних карточек изменить нельзя. Этот режим оставлен только как временный live-вариант.</div></div><div id="jsonFields" style="display:none"><div class="field"><label>URL JSON-источника</label><input id="jsonUrl" placeholder="https://example.com/reviews.json"></div><div class="field"><label>Автообновление, минут</label><input id="syncEveryMinutes" type="number" min="5" value="60"></div><div class="muted">Серверная синхронизация заработает после подключения backend.</div></div><div class="actions" style="margin-top:12px"><button class="btn primary" id="save">Сохранить</button><button class="btn" id="sync">Синхронизировать</button></div><div class="status" id="status">Готово.</div></div><div class="group"><h3>Вставка</h3><button class="btn" id="embed">Показать код</button><div class="code" id="code"></div></div></section>
-<section class="pane" data-pane="reviews"><div class="group"><h3>Управление отзывами</h3><div id="reviewsDisabled" class="notice bad" style="display:none">В Yandex Live отдельные отзывы нельзя закреплять или скрывать.</div><div id="reviewList" class="reviews"></div></div></section>
-<section class="pane" data-pane="design"><div id="designLimit" class="notice bad" style="display:none"><b>Yandex Live:</b> здесь доступны только внешний фон, заголовок и рамка вокруг iframe. Для настоящей стилизации переключитесь на «Управляемый».</div><div class="group"><h3>Пресет</h3><div class="field"><label>Готовый стиль</label><select id="preset"><option value="custom">Пользовательский</option><option value="etnika">ETNIKA</option></select></div></div><div class="group managedOnly"><h3>Макет карточек</h3><div class="field"><label>Тип</label><select id="layout"><option value="slider">Слайдер</option><option value="grid">Сетка</option><option value="list">Список</option></select></div><div class="row"><div class="field"><label>Колонки</label><input id="columns" type="number" min="1" max="5"></div><div class="field"><label>Радиус карточек</label><input id="radius" type="number" min="0" max="50"></div></div><div class="row"><div class="field"><label>Отступ между карточками</label><input id="gap" type="number" min="0" max="60"></div><div class="field"><label>Ширина блока</label><input id="maxWidth" type="number" min="320" max="2200"></div></div><div class="row"><div class="field"><label>Внутренний отступ</label><input id="cardPadding" type="number" min="0" max="80"></div><div class="field"><label>Толщина границы</label><input id="borderWidth" type="number" min="0" max="6"></div></div><div class="row"><div class="field"><label>Мин. рейтинг</label><select id="minRating"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div><div class="field"><label>Радиус кнопок</label><input id="buttonRadius" type="number" min="0" max="50"></div></div></div><div class="group"><h3>Типографика</h3><div class="field"><label>Основной шрифт</label><select id="fontFamily"><option value="Inter,Arial,sans-serif">Inter</option><option value="Geologica,Arial,sans-serif">Geologica</option><option value="Arial,sans-serif">Arial</option><option value="Georgia,serif">Georgia</option></select></div><div class="field"><label>Шрифт заголовка</label><select id="titleFontFamily"><option value="Inter,Arial,sans-serif">Inter</option><option value="Geologica,Arial,sans-serif">Geologica</option><option value="Forum,Georgia,serif">Forum</option><option value="Georgia,serif">Georgia</option></select></div><div class="row"><div class="field"><label>Размер заголовка</label><input id="titleSize" type="number" min="18" max="96"></div><div class="field managedOnly"><label>Размер текста отзыва</label><input id="bodySize" type="number" min="12" max="28"></div></div></div><div class="group"><h3>Тексты</h3><div class="field"><label>Заголовок</label><input id="title"></div><div class="field"><label>Подзаголовок</label><input id="subtitle"></div><div class="field"><label>Текст кнопки</label><input id="buttonText"></div><div class="field"><label>Ссылка кнопки</label><input id="buttonUrl"></div></div><div class="group"><h3>Цвета</h3><div class="row"><div class="field"><label>Акцент</label><input id="accent" type="color"></div><div class="field"><label>Фон блока</label><input id="background" type="color"></div></div><div class="row managedOnly"><div class="field"><label>Карточка</label><input id="cardBackground" type="color"></div><div class="field"><label>Звёзды</label><input id="starColor" type="color"></div></div><div class="row"><div class="field"><label>Текст</label><input id="textColor" type="color"></div><div class="field"><label>Граница</label><input id="borderColor" type="color"></div></div><div class="field" id="yandexHeightField" style="display:none"><label>Высота Yandex iframe</label><input id="yandexHeight" type="number" min="500"></div><div class="managedOnly"><label class="check"><input id="showAvatar" type="checkbox"> Аватар</label><label class="check"><input id="showDate" type="checkbox"> Дата</label><label class="check"><input id="showSource" type="checkbox"> Источник</label><label class="check"><input id="showSummary" type="checkbox"> Общий рейтинг</label><label class="check"><input id="autoplay" type="checkbox"> Автопрокрутка</label></div><button class="btn primary" id="saveDesign">Сохранить дизайн</button></div></section></aside>
-<main class="main"><div class="top"><div><h1>Предпросмотр</h1><div id="modeBadge" class="mode-badge">Полный дизайн</div></div><div class="actions"><button class="btn" id="reload">Обновить</button></div></div><div class="preview"><div id="preview"></div></div></main></div>
+<div class="app"><aside class="side">
+<div class="brand">Universal Reviews</div>
+<div class="sub">Источник отзывов и способ отображения настраиваются отдельно.</div>
+<div class="tabs"><button class="tab on" data-tab="source">Источник</button><button class="tab" data-tab="reviews">Отзывы</button><button class="tab" data-tab="design">Дизайн</button></div>
+
+<section class="pane on" data-pane="source">
+  <div class="group"><h3>1. Откуда брать отзывы</h3>
+    <div class="field"><label>Источник данных</label>
+      <select id="provider">
+        <option value="yandex">Яндекс Карты</option>
+        <option value="json">JSON / API</option>
+        <option value="manual">Ручные отзывы</option>
+      </select>
+    </div>
+
+    <div id="yandexFields">
+      <div class="field"><label>Business ID Яндекс</label><input id="businessId" placeholder="например 226327670406"></div>
+      <div class="field"><label>Ссылка на организацию</label><input id="businessUrl" placeholder="https://yandex.ru/maps/org/.../"></div>
+      <div id="yandexConnector" class="notice bad"><b>Коннектор данных не подключён.</b> Поэтому наш кастомный дизайн пока не получает реальные карточки отзывов из Яндекса автоматически. Официальный iframe работает отдельно.</div>
+    </div>
+
+    <div id="jsonFields" style="display:none">
+      <div class="field"><label>URL JSON-источника</label><input id="jsonUrl" placeholder="https://example.com/reviews.json"></div>
+      <div class="field"><label>Автообновление, минут</label><input id="syncEveryMinutes" type="number" min="5" value="60"></div>
+    </div>
+    <div id="manualFields" class="notice" style="display:none"><b>Ручной источник:</b> отзывы добавляются и управляются внутри сервиса. Автообновления внешней площадки нет.</div>
+  </div>
+
+  <div class="group"><h3>2. Как показывать</h3>
+    <div class="field"><label>Режим отображения</label>
+      <select id="displayMode">
+        <option value="custom">Наш дизайн — полный контроль</option>
+        <option value="native">Официальный виджет источника</option>
+      </select>
+    </div>
+    <div id="customModeInfo" class="notice"><b>Наш дизайн:</b> работают шрифты, колонки, радиусы, цвета, слайдер, закрепление и скрытие.</div>
+    <div id="nativeModeInfo" class="notice bad" style="display:none"><b>Официальный Яндекс iframe:</b> отзывы обновляются Яндексом, но шрифт, колонки и внутренний дизайн изменить нельзя.</div>
+    <div id="invalidModeInfo" class="notice bad" style="display:none"><b>Этот источник не имеет встроенного официального iframe в текущей версии.</b> Используйте «Наш дизайн».</div>
+  </div>
+
+  <div class="actions" style="margin-top:12px"><button class="btn primary" id="save">Сохранить</button><button class="btn" id="sync">Синхронизировать</button></div>
+  <div class="status" id="status">Готово.</div>
+
+  <div class="group"><h3>Вставка</h3><button class="btn" id="embed">Показать код</button><div class="code" id="code"></div></div>
+</section>
+
+<section class="pane" data-pane="reviews">
+  <div class="group"><h3>Управление отзывами</h3>
+    <div id="reviewsSourceLabel" class="notice"></div>
+    <div id="reviewsDisabled" class="notice bad" style="display:none">В официальном iframe отдельные отзывы нельзя закреплять или скрывать.</div>
+    <div id="reviewList" class="reviews"></div>
+  </div>
+</section>
+
+<section class="pane" data-pane="design">
+  <div id="designLimit" class="notice bad" style="display:none"><b>Официальный iframe:</b> дизайн внутренних карточек задаёт Яндекс. Переключитесь на «Наш дизайн» для полной стилизации.</div>
+
+  <div class="group"><h3>Пресет</h3><div class="field"><label>Готовый стиль</label><select id="preset"><option value="custom">Пользовательский</option><option value="etnika">ETNIKA</option></select></div></div>
+
+  <div class="group customOnly"><h3>Макет карточек</h3>
+    <div class="field"><label>Тип</label><select id="layout"><option value="slider">Слайдер</option><option value="grid">Сетка</option><option value="list">Список</option></select></div>
+    <div class="row"><div class="field"><label>Колонки</label><input id="columns" type="number" min="1" max="5"></div><div class="field"><label>Радиус карточек</label><input id="radius" type="number" min="0" max="50"></div></div>
+    <div class="row"><div class="field"><label>Отступ между карточками</label><input id="gap" type="number" min="0" max="60"></div><div class="field"><label>Ширина блока</label><input id="maxWidth" type="number" min="320" max="2200"></div></div>
+    <div class="row"><div class="field"><label>Внутренний отступ</label><input id="cardPadding" type="number" min="0" max="80"></div><div class="field"><label>Толщина границы</label><input id="borderWidth" type="number" min="0" max="6"></div></div>
+    <div class="row"><div class="field"><label>Мин. рейтинг</label><select id="minRating"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div><div class="field"><label>Радиус кнопок</label><input id="buttonRadius" type="number" min="0" max="50"></div></div>
+  </div>
+
+  <div class="group"><h3>Типографика</h3>
+    <div class="field"><label>Основной шрифт</label><select id="fontFamily"><option value="Inter,Arial,sans-serif">Inter</option><option value="Geologica,Arial,sans-serif">Geologica</option><option value="Arial,sans-serif">Arial</option><option value="Georgia,serif">Georgia</option></select></div>
+    <div class="field"><label>Шрифт заголовка</label><select id="titleFontFamily"><option value="Inter,Arial,sans-serif">Inter</option><option value="Geologica,Arial,sans-serif">Geologica</option><option value="Forum,Georgia,serif">Forum</option><option value="Georgia,serif">Georgia</option></select></div>
+    <div class="row"><div class="field"><label>Размер заголовка</label><input id="titleSize" type="number" min="18" max="96"></div><div class="field customOnly"><label>Размер текста отзыва</label><input id="bodySize" type="number" min="12" max="28"></div></div>
+  </div>
+
+  <div class="group"><h3>Тексты</h3>
+    <div class="field"><label>Заголовок</label><input id="title"></div><div class="field"><label>Подзаголовок</label><input id="subtitle"></div>
+    <div class="field"><label>Текст кнопки</label><input id="buttonText"></div><div class="field"><label>Ссылка кнопки</label><input id="buttonUrl"></div>
+  </div>
+
+  <div class="group"><h3>Цвета</h3>
+    <div class="row"><div class="field"><label>Акцент</label><input id="accent" type="color"></div><div class="field"><label>Фон блока</label><input id="background" type="color"></div></div>
+    <div class="row customOnly"><div class="field"><label>Карточка</label><input id="cardBackground" type="color"></div><div class="field"><label>Звёзды</label><input id="starColor" type="color"></div></div>
+    <div class="row"><div class="field"><label>Текст</label><input id="textColor" type="color"></div><div class="field"><label>Граница</label><input id="borderColor" type="color"></div></div>
+    <div class="field" id="yandexHeightField" style="display:none"><label>Высота Yandex iframe</label><input id="yandexHeight" type="number" min="500"></div>
+    <div class="customOnly"><label class="check"><input id="showAvatar" type="checkbox"> Аватар</label><label class="check"><input id="showDate" type="checkbox"> Дата</label><label class="check"><input id="showSource" type="checkbox"> Источник</label><label class="check"><input id="showSummary" type="checkbox"> Общий рейтинг</label><label class="check"><input id="autoplay" type="checkbox"> Автопрокрутка</label></div>
+    <button class="btn primary" id="saveDesign">Сохранить дизайн</button>
+  </div>
+</section>
+</aside>
+
+<main class="main"><div class="top"><div><h1>Предпросмотр</h1><div id="modeBadge" class="mode-badge">Яндекс · наш дизайн</div></div><div class="actions"><button class="btn" id="reload">Обновить</button></div></div><div class="preview"><div id="preview"></div></div></main>
+</div>
 <script src="widget.js"></script><script src="builder.js"></script></body></html>
