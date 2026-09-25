@@ -38,6 +38,7 @@ function authorized(req, id) {
 function sanitizeProject(current, incoming, id) {
   const src = incoming && typeof incoming === 'object' ? incoming : {};
   const source = src.source && typeof src.source === 'object' ? src.source : current.source || {};
+  const display = src.display && typeof src.display === 'object' ? src.display : current.display || { mode: 'custom' };
   const design = src.design && typeof src.design === 'object' ? src.design : current.design || {};
   const content = src.content && typeof src.content === 'object' ? src.content : current.content || {};
   const moderation = src.moderation && typeof src.moderation === 'object' ? src.moderation : current.moderation || {};
@@ -53,6 +54,7 @@ function sanitizeProject(current, incoming, id) {
       businessUrl: String(source.businessUrl || '').trim()
     },
     reviewsUrl: current.reviewsUrl || `data/projects/${id}.json`,
+    display: { mode: display.mode === 'native' ? 'native' : 'custom' },
     design,
     content,
     moderation,
