@@ -1,0 +1,53 @@
+name: Fix asset cache versioning
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-cache-versioning.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Patch asset loading
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('<link rel="stylesheet" href="builder.css">', '<link rel="stylesheet" href="builder.css?v=20260925">')
+          old = '<script src="widget.js"></script>\n<script src="builder.js"></script>'
+          new = '''<script>
+          (function(){
+            const v = Date.now();
+            const w = document.createElement('script');
+            w.src = 'widget.js?v=' + v;
+            w.onload = function(){
+              const b = document.createElement('script');
+              b.src = 'builder.js?v=' + v;
+              document.body.appendChild(b);
+            };
+            document.body.appendChild(w);
+          })();
+          </script>'''
+          if old not in s:
+              raise SystemExit('index script block not found')
+          s = s.replace(old, new)
+          p.write_text(s, encoding='utf-8')
+
+          p = Path('builder.js')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace("<script src=\"${base}widget.js\"><\\/script>", "<script src=\"${base}widget.js?v=20260925-2001\"><\\/script>")
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html builder.js
+          git diff --cached --quiet || git commit -m "Force fresh widget assets in builder"
+          git push
