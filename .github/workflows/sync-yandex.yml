@@ -26,7 +26,7 @@ jobs:
         run: python scripts/sync_projects.py
       - name: Commit updated project reviews
         run: |
-          if git diff --quiet -- data/projects; then
+          if [ -z "$(git status --porcelain -- data/projects)" ]; then
             echo "No review changes"
             exit 0
           fi
