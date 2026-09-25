@@ -10,7 +10,7 @@ function loadWidget(){
   if(widgetPromise)return widgetPromise;
   widgetPromise=new Promise((resolve,reject)=>{
     const s=document.createElement('script');
-    s.src=new URL('widget.js',base).href;
+    s.src=new URL('widget.js',base).href+'?v=20260925-projects';
     s.async=true;
     s.onload=()=>window.UniversalReviews?resolve(window.UniversalReviews):reject(new Error('Widget API not found'));
     s.onerror=()=>reject(new Error('Widget script failed to load'));
@@ -46,15 +46,25 @@ async function mount(el){
   if(!id)return;
   try{
     const [{cfg,data},api]=await Promise.all([getProject(id),loadWidget()]);
-    const reviews=applyModeration(data.reviews,cfg.moderation);
-    const payload={
-      mode:'managed',
-      summary:data.summary||null,
-      profile:data.profile||null,
-      reviews,
-      design:cfg.design||{},
-      content:cfg.content||{}
-    };
+    let payload;
+    if(cfg.display&&cfg.display.mode==='native'){
+      payload={
+        mode:'yandex-live',
+        source:cfg.source||{},
+        design:cfg.design||{},
+        content:cfg.content||{}
+      };
+    }else{
+      const reviews=applyModeration(data.reviews,cfg.moderation);
+      payload={
+        mode:'managed',
+        summary:data.summary||null,
+        profile:data.profile||null,
+        reviews,
+        design:cfg.design||{},
+        content:cfg.content||{}
+      };
+    }
     api.mount(el,payload);
     el.setAttribute('data-reviews-ready','true');
   }catch(err){
