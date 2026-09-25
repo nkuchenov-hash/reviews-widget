@@ -69,14 +69,12 @@
         <div class="row"><div class="field"><label>Мин. рейтинг показа</label><select id="minRating"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div><div class="field"><label>Строк текста до «Ещё»</label><input id="maxTextLines" type="number" min="3" max="20"></div></div>
       </div>
 
-      <div class="group customOnly">
-        <h3>Сетка и список</h3>
-        <div class="notice">Сетка и список не выводят все 204 отзыва сразу. Сначала показывается ограниченное количество карточек, затем кнопка «Показать ещё».</div>
-        <div class="row"><div class="field"><label>Сетка: карточек сначала</label><input id="gridInitialItems" type="number" min="1" max="30"></div><div class="field"><label>Список: карточек сначала</label><input id="listInitialItems" type="number" min="1" max="20"></div></div>
-        <div class="field"><label>Добавлять по нажатию «Показать ещё»</label><input id="loadMoreStep" type="number" min="1" max="30"></div>
+      <div class="group customOnly" id="collectionSettings" style="display:none">
+        <h3 id="collectionSettingsTitle">Сетка</h3>
+        <div class="row"><div class="field"><label id="initialItemsLabel">Карточек сначала</label><input id="initialItems" type="number" min="1" max="30"></div><div class="field"><label>Добавлять по «Показать ещё»</label><input id="loadMoreStep" type="number" min="1" max="30"></div></div>
       </div>
 
-      <div class="group customOnly">
+      <div class="group customOnly" id="sliderSettings">
         <h3>Слайдер</h3>
         <label class="check"><input id="autoplay" type="checkbox"> Автопрокрутка</label>
         <div class="row"><div class="field"><label>Интервал, сек.</label><input id="autoplaySeconds" type="number" min="1.2" max="30" step="0.1"></div><div class="field"><label>Скорость анимации, мс</label><input id="transitionMs" type="number" min="80" max="2000" step="20"></div></div>
@@ -89,6 +87,11 @@
         <div class="field"><label>Шрифт заголовка</label><select id="titleFontPreset"><option value="inherit">Наследовать шрифт сайта</option><option value="forum">Forum</option><option value="geologica">Geologica</option><option value="inter">Inter</option><option value="georgia">Georgia</option><option value="custom">Свой font-family</option></select></div>
         <div class="field" id="customTitleFontWrap" style="display:none"><label>Свой font-family заголовка</label><input id="customTitleFontFamily" placeholder="Например: Cormorant Garamond, serif"></div>
         <div class="field"><label>URL CSS шрифта (необязательно)</label><input id="fontCssUrl" placeholder="https://fonts.googleapis.com/css2?family=..."></div>
+        <div class="triple font-weight-controls">
+          <div class="field"><label>Толщина текста</label><select id="bodyWeight"><option value="300">300 Light</option><option value="400">400 Regular</option><option value="500">500 Medium</option><option value="600">600 SemiBold</option><option value="700">700 Bold</option></select></div>
+          <div class="field"><label>Толщина заголовка</label><select id="titleWeight"><option value="300">300 Light</option><option value="400">400 Regular</option><option value="500">500 Medium</option><option value="600">600 SemiBold</option><option value="700">700 Bold</option></select></div>
+          <div class="field"><label>Имена и кнопки</label><select id="strongWeight"><option value="300">300 Light</option><option value="400">400 Regular</option><option value="500">500 Medium</option><option value="600">600 SemiBold</option><option value="700">700 Bold</option></select></div>
+        </div>
         <div class="row"><div class="field"><label>Размер заголовка desktop</label><input id="titleSize" type="number" min="18" max="96"></div><div class="field"><label>Размер заголовка mobile</label><input id="mobileTitleSize" type="number" min="18" max="64"></div></div>
         <div class="field"><label>Размер текста отзыва</label><input id="bodySize" type="number" min="12" max="28"></div>
       </div>
