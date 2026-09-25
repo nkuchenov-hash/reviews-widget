@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, os, re, time
+import json, os, time
 from datetime import datetime, timezone
 from html import unescape
 from html.parser import HTMLParser
@@ -50,18 +50,92 @@ def fetch_page(page):
             if node:return node
     raise RuntimeError(f'Yandex markup not recognized on page {page}')
 
+def tpl_url(value,size='M'):
+    if not isinstance(value,str) or not value:return ''
+    return value.replace('{size}',size).replace('%s',size)
+
+def avatar_url(value):
+    if not isinstance(value,str) or not value:return ''
+    return value.replace('{size}','islands-68').replace('%s','islands-68')
+
+def normalize_video(v):
+    if not isinstance(v,dict): return None
+    url=v.get('url') or v.get('videoUrl') or v.get('urlTemplate') or ''
+    preview=v.get('preview') or v.get('previewUrl') or v.get('thumbnail') or v.get('imageUrlTemplate') or ''
+    if isinstance(preview,dict): preview=preview.get('url') or preview.get('urlTemplate') or ''
+    if isinstance(url,dict): url=url.get('url') or url.get('urlTemplate') or ''
+    url=tpl_url(url,'L')
+    preview=tpl_url(preview,'M')
+    if not url and not preview:return None
+    return {'type':'video','url':url,'preview':preview}
+
 def normalize(raw):
     rid=str(raw.get('reviewId') or '')
     if not rid:return None
     a=raw.get('author')
     author=a.get('name') if isinstance(a,dict) else a
-    avatar=None
-    if isinstance(a,dict): avatar=a.get('avatarUrl') or a.get('avatar') or a.get('photoUrl')
+    avatar=avatar_url(a.get('avatarUrl') or a.get('avatar') or a.get('photoUrl')) if isinstance(a,dict) else ''
+    profession=(a.get('professionLevel') or a.get('rtb') or '') if isinstance(a,dict) else ''
+
+    photos=[]
+    for p in raw.get('photos') or []:
+        if not isinstance(p,dict):continue
+        u=tpl_url(p.get('urlTemplate') or p.get('url') or '', 'M')
+        if u: photos.append({'type':'photo','url':u})
+
+    videos=[]
+    for v in raw.get('videos') or []:
+        nv=normalize_video(v)
+        if nv:videos.append(nv)
+
+    bc=raw.get('businessComment') if isinstance(raw.get('businessComment'),dict) else None
+    reactions=raw.get('reactions') if isinstance(raw.get('reactions'),dict) else {}
+    created=raw.get('createdTime') or raw.get('time') or ''
+    updated=raw.get('updatedTime') or created
+
     return {
-        'id':rid,'author':author or 'Пользователь Яндекса','avatar':avatar or '',
-        'rating':int(raw.get('rating') or 0),'text':raw.get('text') or '',
-        'date':raw.get('updatedTime') or raw.get('time') or '', 'source':'yandex',
-        'url':f'https://yandex.com/maps/org/{SLUG}/{BUSINESS_ID}/reviews/'
+        'id':rid,
+        'author':author or 'Пользователь Яндекса',
+        'authorLevel':profession,
+        'avatar':avatar,
+        'rating':int(raw.get('rating') or 0),
+        'text':raw.get('text') or '',
+        'date':updated,
+        'createdDate':created,
+        'edited':bool(created and updated and created!=updated),
+        'source':'yandex',
+        'url':f'https://yandex.com/maps/org/{SLUG}/{BUSINESS_ID}/reviews/',
+        'likes':int(reactions.get('likes') or 0),
+        'dislikes':int(reactions.get('dislikes') or 0),
+        'photos':photos,
+        'videos':videos,
+        'businessResponse':({'text':bc.get('text') or '', 'date':bc.get('updatedTime') or ''} if bc else None)
+    }
+
+def profile_from_node(node):
+    cats=[]
+    for c in node.get('categories') or []:
+        if isinstance(c,dict) and c.get('name'):cats.append(c.get('name'))
+        elif isinstance(c,str):cats.append(c)
+    phones=[]
+    for p in node.get('phones') or []:
+        if isinstance(p,dict):
+            v=p.get('formatted') or p.get('value') or p.get('number')
+            if v:phones.append(v)
+        elif isinstance(p,str):phones.append(p)
+    photos=node.get('photos') if isinstance(node.get('photos'),dict) else {}
+    business_images=node.get('businessImages') if isinstance(node.get('businessImages'),dict) else {}
+    logo=business_images.get('logo')
+    if isinstance(logo,dict):logo=logo.get('url') or logo.get('urlTemplate') or ''
+    return {
+        'name':node.get('name') or node.get('title') or '',
+        'address':node.get('fullAddress') or node.get('address') or '',
+        'categories':cats,
+        'phones':phones,
+        'description':node.get('shortDescription') or node.get('description') or '',
+        'photoCount':photos.get('count') if photos else None,
+        'coverPhoto':tpl_url(photos.get('urlTemplate') if photos else '', 'L'),
+        'logo':tpl_url(logo,'M')
     }
 
 def main():
@@ -70,12 +144,13 @@ def main():
         with open(OUT,'r',encoding='utf-8') as f:
             for r in json.load(f).get('reviews',[]): old[str(r.get('id'))]=r
     except Exception: pass
-    by_id={}; summary={}
+    by_id={}; summary={}; profile={}
     for page in range(1,MAX_PAGES+1):
         node=fetch_page(page)
         rd=node.get('ratingData') or {}
         if page==1:
             summary={'name':node.get('name') or node.get('title'),'rating':rd.get('ratingValue'),'ratingsCount':rd.get('ratingCount'),'reviewsCount':rd.get('reviewCount')}
+            profile=profile_from_node(node)
         raws=((node.get('reviewResults') or {}).get('reviews') or [])
         if not raws:break
         for raw in raws:
@@ -89,7 +164,13 @@ def main():
         if len(raws)<10:break
         time.sleep(.4)
     if not by_id: raise RuntimeError('No reviews extracted from Yandex')
-    out={'source':{'provider':'yandex','businessId':BUSINESS_ID,'businessUrl':f'https://yandex.com/maps/org/{SLUG}/{BUSINESS_ID}/reviews/'},'summary':summary,'fetchedAt':datetime.now(timezone.utc).isoformat(),'reviews':list(by_id.values())}
+    out={
+        'source':{'provider':'yandex','businessId':BUSINESS_ID,'businessUrl':f'https://yandex.com/maps/org/{SLUG}/{BUSINESS_ID}/reviews/'},
+        'summary':summary,
+        'profile':profile,
+        'fetchedAt':datetime.now(timezone.utc).isoformat(),
+        'reviews':list(by_id.values())
+    }
     os.makedirs(os.path.dirname(OUT),exist_ok=True)
     with open(OUT,'w',encoding='utf-8') as f: json.dump(out,f,ensure_ascii=False,indent=2)
     print(f"Saved {len(by_id)} reviews")
