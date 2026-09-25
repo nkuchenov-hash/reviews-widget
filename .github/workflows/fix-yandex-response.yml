@@ -1,0 +1,37 @@
+name: Fix Yandex response design
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-yandex-response.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch response design
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('widget.js')
+          s=p.read_text(encoding='utf-8')
+          old_css=""".urw-response{margin-top:10px;padding-top:9px;border-top:1px solid var(--u-border)}.urw-response summary{cursor:pointer;list-style:none;font-size:12px;font-weight:var(--u-strong-weight);color:var(--u-muted);user-select:none}.urw-response summary::-webkit-details-marker{display:none}.urw-response summary:before{content:'— ';color:var(--u-muted)}.urw-response[open] summary{margin-bottom:9px}.urw-response-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}.urw-response-logo{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#f1f1f1;font-size:11px;font-weight:700;overflow:hidden}.urw-response-logo img{width:100%;height:100%;object-fit:cover}.urw-response-title{font-size:12px;font-weight:var(--u-strong-weight)}.urw-response-date{font-size:11px;color:var(--u-muted)}.urw-response-text{font-size:13px;line-height:1.45;margin:0}"""
+          new_css=""".urw-response{margin-top:12px;padding-top:10px;border-top:1px solid rgba(0,0,0,.08)}.urw-response summary{display:inline-flex;align-items:center;gap:6px;cursor:pointer;list-style:none;font-size:12px;font-weight:var(--u-strong-weight);color:var(--u-muted);user-select:none}.urw-response summary::-webkit-details-marker{display:none}.urw-response summary:before{content:'—';color:var(--u-muted)}.urw-response-hide{display:none}.urw-response[open] .urw-response-show{display:none}.urw-response[open] .urw-response-hide{display:inline}.urw-response-body{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:start;margin-top:12px}.urw-response-logo{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#e2e3e5;color:#fff;overflow:hidden;flex:0 0 auto}.urw-response-logo img{width:100%;height:100%;object-fit:cover}.urw-response-logo svg{width:22px;height:22px;fill:currentColor}.urw-response-card{min-width:0;background:rgba(0,0,0,.045);border-radius:12px;overflow:hidden}.urw-response-card-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;padding:8px 12px;background:rgba(0,0,0,.035)}.urw-response-title{font-size:12px;font-weight:var(--u-strong-weight);color:var(--u-text)}.urw-response-date{font-size:11px;color:var(--u-muted)}.urw-response-text{font-size:13px;line-height:1.5;margin:0;padding:10px 12px 12px;white-space:pre-line;color:var(--u-text)}"""
+          if old_css not in s:
+              raise SystemExit('old response css not found')
+          s=s.replace(old_css,new_css,1)
+          old_fn="""  response(r){const b=r.businessResponse;if(!this.design.showBusinessResponse||!b||!b.text)return'';const logo=this.payload.profile?.logo;return `<details class=\"urw-response\"><summary>Посмотреть ответ организации</summary><div class=\"urw-response-head\"><div class=\"urw-response-logo\">${logo?`<img src=\"${esc(safeUrl(mediaUrl(logo)))}\" alt=\"\">`:'О'}</div><div><div class=\"urw-response-title\">Ответ организации</div>${b.date?`<div class=\"urw-response-date\">${esc(dateLabel(b.date))}</div>`:''}</div></div><p class=\"urw-response-text\">${esc(b.text)}</p></details>`}"""
+          new_fn="""  response(r){const b=r.businessResponse;if(!this.design.showBusinessResponse||!b||!b.text)return'';const logo=this.payload.profile?.logo;const fallback=`<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0v1H5v-1Z\"/></svg>`;return `<details class=\"urw-response\"><summary><span class=\"urw-response-show\">Показать ответ организации</span><span class=\"urw-response-hide\">Скрыть ответ организации</span></summary><div class=\"urw-response-body\"><div class=\"urw-response-logo\">${logo?`<img src=\"${esc(safeUrl(mediaUrl(logo)))}\" alt=\"\">`:fallback}</div><div class=\"urw-response-card\"><div class=\"urw-response-card-head\"><span class=\"urw-response-title\">Официальный ответ</span>${b.date?`<span class=\"urw-response-date\">${esc(dateLabel(b.date))}</span>`:''}</div><p class=\"urw-response-text\">${esc(b.text)}</p></div></div></details>`}"""
+          if old_fn not in s:
+              raise SystemExit('old response function not found')
+          s=s.replace(old_fn,new_fn,1)
+          p.write_text(s,encoding='utf-8')
+      - name: Commit
+        run: |
+          rm .github/workflows/fix-yandex-response.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Match Yandex organization response design"
+          git push
