@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Universal Reviews — Widget Builder</title>
-<link rel="stylesheet" href="builder.css">
+<link rel="stylesheet" href="builder.css?v=20260925">
 </head>
 <body>
 <div class="app">
@@ -125,7 +125,18 @@
     <div class="preview"><div class="preview-frame" id="previewFrame"><div id="preview"></div></div></div>
   </main>
 </div>
-<script src="widget.js"></script>
-<script src="builder.js"></script>
+<script>
+(function(){
+  const v = Date.now();
+  const w = document.createElement('script');
+  w.src = 'widget.js?v=' + v;
+  w.onload = function(){
+    const b = document.createElement('script');
+    b.src = 'builder.js?v=' + v;
+    document.body.appendChild(b);
+  };
+  document.body.appendChild(w);
+})();
+</script>
 </body>
 </html>
