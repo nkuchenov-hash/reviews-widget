@@ -1,0 +1,38 @@
+name: Apply project runtime
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/apply-project-runtime.yml'
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch builder for project IDs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('builder.js')
+          s=p.read_text(encoding='utf-8')
+          old="const STATIC_MODE=location.hostname.endsWith('github.io')||location.protocol==='file:';\nconst SOURCE_URL='./data/reviews.json';"
+          new="const STATIC_MODE=location.hostname.endsWith('github.io')||location.protocol==='file:';\nconst PROJECT_ID=(new URLSearchParams(location.search).get('project')||'etnika').trim();\nconst SOURCE_URL='./data/projects/'+encodeURIComponent(PROJECT_ID)+'.json';"
+          if old in s:
+              s=s.replace(old,new,1)
+          s=s.replace("function storageKey(){return 'URW_WIDGET_V7_demo'}","function storageKey(){return 'URW_WIDGET_V8_'+PROJECT_ID}")
+          s=s.replace("function oldStorageKey(){return 'URW_WIDGET_V6_demo'}","function oldStorageKey(){return 'URW_WIDGET_V7_'+PROJECT_ID}")
+          p.write_text(s,encoding='utf-8')
+          i=Path('index.html')
+          x=i.read_text(encoding='utf-8').replace('client-ui.js?v=20260925-client1','client-ui.js?v=20260925-client2')
+          i.write_text(x,encoding='utf-8')
+          PY
+      - name: Commit project runtime
+        run: |
+          if [ -z "$(git status --porcelain -- builder.js index.html)" ]; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add builder.js index.html
+          git commit -m "Use project-specific widget runtime"
+          git push
