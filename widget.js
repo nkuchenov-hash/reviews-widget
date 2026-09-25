@@ -23,10 +23,11 @@ function ratingLabel(v){const n=Number(v)||0;return new Intl.NumberFormat('ru-RU
 function stars(n){const r=Math.max(0,Math.min(5,Math.round(Number(n)||0)));return `<span class="urw-stars" aria-label="${r} из 5">${'★'.repeat(r)}${'☆'.repeat(5-r)}</span>`}
 function initials(s){return esc(String(s||'К').trim().split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase())}
 function ensureFont(url){
-  if(!url)return;
+  if(!url)return Promise.resolve();
   const key='urw-font-'+btoa(unescape(encodeURIComponent(url))).replace(/[^a-z0-9]/gi,'').slice(-18);
-  if(document.getElementById(key))return;
-  const l=document.createElement('link');l.id=key;l.rel='stylesheet';l.href=url;document.head.appendChild(l)
+  const existing=document.getElementById(key);
+  if(existing)return Promise.resolve();
+  return new Promise(resolve=>{const l=document.createElement('link');l.id=key;l.rel='stylesheet';l.href=url;l.onload=()=>resolve();l.onerror=()=>resolve();document.head.appendChild(l);setTimeout(resolve,2500)})
 }
 function inject(){
   if(document.getElementById('urw-v8-style'))return;
@@ -53,7 +54,7 @@ class W{
       try{const r=await fetch(`${SCRIPT_BASE}data/reviews.json?v=${Date.now()}`,{cache:'no-store'});if(r.ok){const j=await r.json();payload={...payload,summary:payload.summary||j.summary,profile:payload.profile||j.profile}}}catch{}
     }
     this.payload=payload;this.design={...D,...(payload.design||{}),...(this.raw.design||{})};this.content={...C,...(payload.content||{}),...(this.raw.content||{})};
-    ensureFont(this.design.fontCssUrl);this.apply();this.render();this.start();
+    await ensureFont(this.design.fontCssUrl);if(document.fonts?.ready)try{await document.fonts.ready}catch{}this.apply();this.render();this.start();
     if('ResizeObserver'in window){this.ro=new ResizeObserver(()=>{if(this.design.layout==='slider')this.go(this.i)});this.ro.observe(this.el)}
   }
   apply(){
