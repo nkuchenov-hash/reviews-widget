@@ -1,4 +1,4 @@
-name: Sync Yandex reviews
+name: Sync client reviews
 on:
   workflow_dispatch:
   schedule:
@@ -7,10 +7,12 @@ on:
     paths:
       - '.github/workflows/sync-yandex.yml'
       - 'scripts/sync_yandex.py'
+      - 'scripts/sync_projects.py'
+      - 'projects/*.json'
 permissions:
   contents: write
 concurrency:
-  group: sync-yandex-reviews
+  group: sync-client-reviews
   cancel-in-progress: true
 jobs:
   sync:
@@ -20,16 +22,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Fetch Yandex reviews
-        run: python scripts/sync_yandex.py
-      - name: Commit updated reviews
+      - name: Fetch reviews for active projects
+        run: python scripts/sync_projects.py
+      - name: Commit updated project reviews
         run: |
-          if git diff --quiet -- data/reviews.json; then
+          if git diff --quiet -- data/projects; then
             echo "No review changes"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/reviews.json
-          git commit -m "Update Yandex reviews"
+          git add data/projects
+          git commit -m "Update client reviews"
           git push
