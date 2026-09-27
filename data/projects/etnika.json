@@ -27,7 +27,7 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-09-27T05:16:41.398871+00:00",
+  "fetchedAt": "2026-09-27T12:00:08.578631+00:00",
   "reviews": [
     {
       "id": "P94Rh3xBjdIVpNTRFfrdWGHB6r-hFsis",
@@ -383,25 +383,6 @@
         "text": "Благодарим вас за такой душевный и вдохновляющий отзыв! 🫶🏻\n\nНам особенно приятно, что вы обратили внимание на главную идею нашего формата — возможность быть собой, без стеснения перед фотографом. Именно для этого мы создаём пространство: чистое, стильное, с классным реквизитом и музыкой для настроения. И, конечно, с администратором, который всегда поможет, но не мешает 😊\n\n«Побыть наедине с собой и сделать стильные кадры» — это про нас. Мы рады, что вы это почувствовали.\n\nЖдём вас снова в студии автопортрета Этника за новыми красивыми кадрами и вдохновением! 🎞️✨\n\nС творческим теплом,\nкоманда студии автопортрета Этника",
         "date": "2026-09-09T08:10:18.791Z"
       }
-    },
-    {
-      "id": "LvDXFaxh504dUjTsaBP5rTDKNQf-3C",
-      "author": "Мария Ф.",
-      "authorPublicId": "e7dw7811d0mtdmdacy5yaxbq5g",
-      "authorLevel": "Знаток города 4 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/36777/jW47L152f765MiQkp3VWczyY8-1/islands-68",
-      "rating": 5,
-      "text": "Находится близко к метро Автозаводская, очень удобно идти. Очень крутая фотостудия! Нас встретила безумно милая и доброжелательная девушка. Всем советую❤️Точно не пожалеете)))",
-      "date": "2026-09-26T10:27:50.607Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=e7dw7811d0mtdmdacy5yaxbq5g&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [],
-      "videos": [],
-      "businessResponse": null
     },
     {
       "id": "gy8iulQnSHAFpil4lKX_oxXZ5WOVD8Cfz",
@@ -2839,10 +2820,10 @@
     },
     {
       "id": "7O1NpdGQan5BcZayl8SzKGhN3h5i7Nv",
-      "author": "Сонечка Барашкина",
+      "author": "Софочка Барашкина",
       "authorPublicId": "mta2vzfevncye2t9eby13xuwbw",
       "authorLevel": "Знаток города 3 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/63032/0r-3/islands-68",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/18057972/joYHe6tfSZcGQugG7R5X7E3qElM-1/islands-68",
       "rating": 5,
       "text": "Круто место. Парень, сидевший там, очень милый, помогал когда нужно, все быстро и понятно объяснил) Фотки делают качественно, много разных вариантов фона и декораций. Очень рекомендую!!!",
       "date": "2026-02-25T15:48:23.714Z",
@@ -4941,6 +4922,25 @@
         "text": "Вероника, благодарим вас за тёплые слова! 🫶\n\nОчень рады, что вам понравился опыт в нашей студии. Ждём вас снова — и не раз, а много раз! 😊 Будем рады каждый раз дарить вам красивые кадры и отличное настроение 📸✨\n\nС творческим теплом,\nкоманда Etnika Studio",
         "date": "2026-04-02T08:55:25.489Z"
       }
+    },
+    {
+      "id": "LvDXFaxh504dUjTsaBP5rTDKNQf-3C",
+      "author": "Мария Ф.",
+      "authorPublicId": "e7dw7811d0mtdmdacy5yaxbq5g",
+      "authorLevel": "Знаток города 4 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/36777/jW47L152f765MiQkp3VWczyY8-1/islands-68",
+      "rating": 5,
+      "text": "Находится близко к метро Автозаводская, очень удобно идти. Очень крутая фотостудия! Нас встретила безумно милая и доброжелательная девушка. Всем советую❤️Точно не пожалеете)))",
+      "date": "2026-09-26T10:27:50.607Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=e7dw7811d0mtdmdacy5yaxbq5g&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": null
     },
     {
       "id": "LbsJjCg56AFHQ69FhJ1e9zPuvjIGi3NfS",
