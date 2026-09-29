@@ -4,11 +4,74 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>REVIEWS — личный кабинет</title>
-<link rel="stylesheet" href="app.css?v=20260929-1">
+<meta name="description" content="REVIEWS — виджет отзывов с Яндекс Карт с собственным дизайном, автоматической синхронизацией и управлением проектами.">
+<title>REVIEWS — отзывы на вашем сайте</title>
+<link rel="stylesheet" href="landing.css?v=20260929-1">
 </head>
 <body>
-<div id="root"></div>
-<script src="app.js?v=20260929-1"></script>
+<header class="wrap nav">
+  <a class="brand" href="./">REVIEWS</a>
+  <nav class="navlinks">
+    <a href="#features">Возможности</a>
+    <a href="#how">Как работает</a>
+    <a href="#demo">Пример</a>
+    <a href="#price">Тариф</a>
+    <a class="btn" href="app.html">Войти</a>
+  </nav>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <div class="hero-copy">
+      <div>
+        <div class="eyebrow">Отзывы без чужого дизайна</div>
+        <h1>Ваши отзывы.<br>Ваш сайт.<br>Ваш стиль.</h1>
+        <p>Подключите карточку Яндекс Карт, настройте внешний вид и вставьте один короткий код на сайт. Новые отзывы будут подтягиваться автоматически.</p>
+        <div class="hero-actions"><a class="btn dark" href="app.html">Попробовать бесплатно</a><a class="btn" href="#demo">Посмотреть пример</a></div>
+      </div>
+      <div class="eyebrow">ETNIKA — первый работающий проект</div>
+    </div>
+    <aside class="hero-side">
+      <div class="num">01</div>
+      <div><h2>Один код.<br>Дальше — без ручной работы.</h2><p>Меняете дизайн в кабинете, отзывы обновляются автоматически, а код на сайте остаётся тем же.</p></div>
+    </aside>
+  </section>
+
+  <section class="section" id="features"><div class="wrap">
+    <div class="section-head"><h2>Не iframe.<br>Нормальный виджет.</h2><div class="section-lead">Данные приходят из Яндекс Карт, но внешний вид контролируете вы: сетка, слайдер, типографика, цвета, отступы, фотографии, ответы организации и отдельные отзывы.</div></div>
+    <div class="features">
+      <article class="feature"><b>01</b><h3>Автосинхронизация</h3><p>Новые отзывы автоматически появляются без ручного копирования.</p></article>
+      <article class="feature"><b>02</b><h3>Свой дизайн</h3><p>Никакого обязательного внешнего вида Яндекса внутри карточек.</p></article>
+      <article class="feature"><b>03</b><h3>Управление отзывами</h3><p>Закрепление, скрытие, минимальный рейтинг, медиа и ответы организации.</p></article>
+      <article class="feature"><b>04</b><h3>Несколько проектов</h3><p>Один аккаунт для всех сайтов и организаций.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section" id="how"><div class="wrap">
+    <div class="section-head"><h2>Три действия.</h2><div class="section-lead">Без API-ключей Яндекса и без ручного переноса отзывов.</div></div>
+    <div class="steps">
+      <article class="step"><div class="n">1</div><h3>Вставьте ссылку</h3><p>Обычную ссылку на организацию в Яндекс Картах. Система сама определит карточку.</p></article>
+      <article class="step"><div class="n">2</div><h3>Настройте вид</h3><p>Выберите слайдер, сетку или список и подгоните виджет под дизайн сайта.</p></article>
+      <article class="step"><div class="n">3</div><h3>Вставьте код</h3><p>Один embed-код на Tilda или любой другой сайт. Дальше менять его не нужно.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section demo" id="demo"><div class="wrap">
+    <div class="section-head"><h2>Уже работает<br>на реальных данных.</h2><div class="section-lead">Ниже — текущий проект ETNIKA. Отзывы и рейтинг загружаются из действующей карточки Яндекс Карт.</div></div>
+    <div class="demo-box"><div data-reviews-project="etnika"></div></div>
+  </div></section>
+
+  <section class="section" id="price"><div class="wrap">
+    <div class="section-head"><h2>Сейчас — бета.</h2><div class="section-lead">Пока мы тестируем продукт на ETNIKA, доступ к кабинету и проектам бесплатный. Коммерческие тарифы и российскую оплату подключим перед публичным запуском.</div></div>
+    <div class="price">
+      <div class="price-copy"><div class="eyebrow">Beta</div><div class="price-big">0 ₽</div><p>Тестовый доступ без привязки карты. После запуска оплаты текущий тариф и условия будут видны в разделе «Подписка».</p><a class="btn red" href="app.html">Создать аккаунт</a></div>
+      <div class="price-list"><ul><li>Проект ETNIKA уже подключён</li><li>Реальные отзывы Яндекс Карт</li><li>Редактор дизайна</li><li>Постоянный embed-код</li><li>Несколько проектов в одном кабинете</li><li>Будущая оплата российской картой</li></ul></div>
+    </div>
+  </div></section>
+
+  <section class="section cta"><div class="wrap cta-grid"><h2>Отзывы должны работать на сайт, а не ломать его дизайн.</h2><div><a class="btn" href="app.html">Открыть кабинет →</a></div></div></section>
+</main>
+<footer class="wrap footer"><strong>REVIEWS</strong><span>Сервис управления отзывами для сайтов</span><span>Beta · 2026</span></footer>
+<script src="./embed.js" defer></script>
 </body>
 </html>
