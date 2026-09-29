@@ -7,7 +7,7 @@
   "summary": {
     "name": "Студия автопортрета Этника",
     "rating": 5,
-    "ratingsCount": 232,
+    "ratingsCount": 233,
     "reviewsCount": 209
   },
   "profile": {
@@ -27,7 +27,7 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-09-29T09:47:23.756535+00:00",
+  "fetchedAt": "2026-09-29T18:04:19.299461+00:00",
   "reviews": [
     {
       "id": "P94Rh3xBjdIVpNTRFfrdWGHB6r-hFsis",
@@ -61,25 +61,6 @@
         "text": "Дарья, благодарим вас за такой тёплый отзыв! 🫶\n\nКак прекрасно, что вы прочувствовали главную идею нашего формата — полную свободу и отсутствие неловкости перед камерой. Когда рядом только зеркало, пульт и вдохновение, действительно быстро расслабляешься и начинаешь получать искреннее удовольствие от процесса. Мы очень рады, что у вас это получилось!\n\nОтдельное спасибо за оценку стиля и комфорта — мы стараемся создавать атмосферу, в которой хочется творить.\n\nЖдём вас снова в Etnika Studio за новыми красивыми кадрами и приятными эмоциями! 📸✨\n\nС творческим теплом,\nкоманда Etnika Studio",
         "date": "2026-03-02T13:22:41.686Z"
       }
-    },
-    {
-      "id": "ZABOR6xW5KiwrSCxpUM7h6HwLuq0ji-G",
-      "author": "Акимушкина Мария",
-      "authorPublicId": "h5zg7cpvxt54buv5u8mb1xg90r",
-      "authorLevel": "Знаток города 4 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/6218514/tJ6sSCwbnYuNI1LXrLPlc5LIJk-1/islands-68",
-      "rating": 5,
-      "text": "Студия понравилась ещё придем! ",
-      "date": "2026-09-28T10:55:49.314Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=h5zg7cpvxt54buv5u8mb1xg90r&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [],
-      "videos": [],
-      "businessResponse": null
     },
     {
       "id": "lD9k7MIBbE_r_2JUwR6gq6nYXG6QO4nl",
@@ -4867,6 +4848,25 @@
         "text": "Даниил, благодарим вас за такой тёплый и искренний отзыв! ❤️\n\nНам бесконечно приятно, что у вас и вашей второй половинки остались прекрасные впечатления. И особенно ценно, что вы рады, когда рада ваша девушка — это очень трогательно и показывает, насколько вы внимательный и заботливый партнёр 😊\n\nСпасибо за 5 звёзд и даже мысленно за 10! Мы очень старались, чтобы вам понравилось. Обязательно ждём вас снова — будем рады подарить ещё больше красивых кадров и эмоций 📸✨\n\nС творческим теплом,\nкоманда студии автопортрета Этника",
         "date": "2026-08-20T07:51:04.139Z"
       }
+    },
+    {
+      "id": "ZABOR6xW5KiwrSCxpUM7h6HwLuq0ji-G",
+      "author": "Акимушкина Мария",
+      "authorPublicId": "h5zg7cpvxt54buv5u8mb1xg90r",
+      "authorLevel": "Знаток города 4 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/6218514/tJ6sSCwbnYuNI1LXrLPlc5LIJk-1/islands-68",
+      "rating": 5,
+      "text": "Студия понравилась ещё придем! ",
+      "date": "2026-09-28T10:55:49.314Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=h5zg7cpvxt54buv5u8mb1xg90r&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": null
     },
     {
       "id": "87cho_AcRuUzpQf7Wn3yIwvcZ1Ulc4-TA",
