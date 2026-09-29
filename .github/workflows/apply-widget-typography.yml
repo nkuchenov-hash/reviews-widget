@@ -16,7 +16,6 @@ jobs:
           from pathlib import Path
           import re, json
 
-          # widget.js
           p=Path('widget.js'); s=p.read_text(encoding='utf-8')
           old="fontFamily:'inherit',titleFontFamily:'inherit',fontCssUrl:'',titleSize:38,bodySize:15,mobileTitleSize:30,bodyWeight:400,titleWeight:500,strongWeight:500,"
           new="fontFamily:'inherit',titleFontFamily:'inherit',fontCssUrl:'',titleSize:38,mobileTitleSize:30,bodySize:16,kickerSize:16,summarySize:16,authorSize:16,metaSize:16,ratingSize:16,buttonSize:16,actionSize:16,responseSize:16,bodyWeight:400,titleWeight:500,strongWeight:500,"
@@ -25,10 +24,10 @@ jobs:
           s=s.replace('--u-body-size:15px;','--u-body-size:16px;--u-kicker-size:16px;--u-summary-size:16px;--u-author-size:16px;--u-meta-size:16px;--u-rating-size:16px;--u-button-size:16px;--u-action-size:16px;--u-response-size:16px;',1)
           reps={
             '.urw-kicker{font-size:13px;':'.urw-kicker{font-size:var(--u-kicker-size);',
-            'margin-top:8px;font-size:13px;color:var(--u-muted)': 'margin-top:8px;font-size:var(--u-summary-size);color:var(--u-muted)',
+            'margin-top:8px;font-size:13px;color:var(--u-muted)':'margin-top:8px;font-size:var(--u-summary-size);color:var(--u-muted)',
             '.urw-score{font-weight:700;color:var(--u-text);font-size:16px}':'.urw-score{font-weight:700;color:var(--u-text);font-size:var(--u-summary-size)}',
-            'border-radius:var(--u-button-radius);font-size:13px;font-weight:var(--u-strong-weight)': 'border-radius:var(--u-button-radius);font-size:var(--u-button-size);font-weight:var(--u-strong-weight)',
-            'place-items:center;font-size:12px;font-weight:700;': 'place-items:center;font-size:var(--u-meta-size);font-weight:700;',
+            'border-radius:var(--u-button-radius);font-size:13px;font-weight:var(--u-strong-weight)':'border-radius:var(--u-button-radius);font-size:var(--u-button-size);font-weight:var(--u-strong-weight)',
+            'place-items:center;font-size:12px;font-weight:700;':'place-items:center;font-size:var(--u-meta-size);font-weight:700;',
             '.urw-author{font-weight:var(--u-strong-weight);font-size:14px;':'.urw-author{font-weight:var(--u-strong-weight);font-size:var(--u-author-size);',
             '.urw-meta{font-size:12px;':'.urw-meta{font-size:var(--u-meta-size);',
             '.urw-rating{margin:9px 0 7px;font-size:15px}':'.urw-rating{margin:9px 0 7px;font-size:var(--u-rating-size)}',
@@ -50,11 +49,9 @@ jobs:
           new_apply="s.setProperty('--u-title-size',`${Math.max(18,Number(d.titleSize)||38)}px`);s.setProperty('--u-mobile-title-size',`${Math.max(18,Number(d.mobileTitleSize)||30)}px`);s.setProperty('--u-body-size',`${Math.max(16,Number(d.bodySize)||16)}px`);s.setProperty('--u-kicker-size',`${Math.max(16,Number(d.kickerSize)||16)}px`);s.setProperty('--u-summary-size',`${Math.max(16,Number(d.summarySize)||16)}px`);s.setProperty('--u-author-size',`${Math.max(16,Number(d.authorSize)||16)}px`);s.setProperty('--u-meta-size',`${Math.max(16,Number(d.metaSize)||16)}px`);s.setProperty('--u-rating-size',`${Math.max(16,Number(d.ratingSize)||16)}px`);s.setProperty('--u-button-size',`${Math.max(16,Number(d.buttonSize)||16)}px`);s.setProperty('--u-action-size',`${Math.max(16,Number(d.actionSize)||16)}px`);s.setProperty('--u-response-size',`${Math.max(16,Number(d.responseSize)||16)}px`);"
           assert old_apply in s
           s=s.replace(old_apply,new_apply,1)
-          # Any remaining explicit text size below 16 in widget renderer is raised to 16.
           s=re.sub(r'font-size:(\d+)px',lambda m:f"font-size:{max(16,int(m.group(1)))}px",s)
           p.write_text(s,encoding='utf-8')
 
-          # builder.js
           p=Path('builder.js'); s=p.read_text(encoding='utf-8')
           old="fontFamily:'inherit',titleFontFamily:'inherit',fontCssUrl:'',titleSize:38,mobileTitleSize:30,bodySize:15,bodyWeight:400,titleWeight:500,strongWeight:500,"
           new="fontFamily:'inherit',titleFontFamily:'inherit',fontCssUrl:'',titleSize:38,mobileTitleSize:30,bodySize:16,kickerSize:16,summarySize:16,authorSize:16,metaSize:16,ratingSize:16,buttonSize:16,actionSize:16,responseSize:16,bodyWeight:400,titleWeight:500,strongWeight:500,"
@@ -76,31 +73,31 @@ jobs:
           s=s.replace(old_fill,new_fill,1)
           p.write_text(s,encoding='utf-8')
 
-          # builder.html typography controls
           p=Path('builder.html'); s=p.read_text(encoding='utf-8')
           old='<div class="field"><label>Размер текста отзыва</label><input id="bodySize" type="number" min="12" max="28"></div>'
           assert old in s
-          new='''<div class="field"><label>Текст отзыва</label><input id="bodySize" type="number" min="16" max="32"></div>
-        <div class="row"><div class="field"><label>Подзаголовок / источник</label><input id="kickerSize" type="number" min="16" max="32"></div><div class="field"><label>Сводка рейтинга</label><input id="summarySize" type="number" min="16" max="32"></div></div>
-        <div class="row"><div class="field"><label>Имя автора</label><input id="authorSize" type="number" min="16" max="32"></div><div class="field"><label>Дата и метаданные</label><input id="metaSize" type="number" min="16" max="32"></div></div>
-        <div class="row"><div class="field"><label>Звёзды / рейтинг</label><input id="ratingSize" type="number" min="16" max="36"></div><div class="field"><label>Кнопки</label><input id="buttonSize" type="number" min="16" max="32"></div></div>
-        <div class="row"><div class="field"><label>Ссылки и реакции</label><input id="actionSize" type="number" min="16" max="32"></div><div class="field"><label>Ответ организации</label><input id="responseSize" type="number" min="16" max="32"></div></div>'''
-          s=s.replace(old,new,1)
+          controls=(
+            '<div class="field"><label>Текст отзыва</label><input id="bodySize" type="number" min="16" max="32"></div>\n'
+            '        <div class="row"><div class="field"><label>Подзаголовок / источник</label><input id="kickerSize" type="number" min="16" max="32"></div><div class="field"><label>Сводка рейтинга</label><input id="summarySize" type="number" min="16" max="32"></div></div>\n'
+            '        <div class="row"><div class="field"><label>Имя автора</label><input id="authorSize" type="number" min="16" max="32"></div><div class="field"><label>Дата и метаданные</label><input id="metaSize" type="number" min="16" max="32"></div></div>\n'
+            '        <div class="row"><div class="field"><label>Звёзды / рейтинг</label><input id="ratingSize" type="number" min="16" max="36"></div><div class="field"><label>Кнопки</label><input id="buttonSize" type="number" min="16" max="32"></div></div>\n'
+            '        <div class="row"><div class="field"><label>Ссылки и реакции</label><input id="actionSize" type="number" min="16" max="32"></div><div class="field"><label>Ответ организации</label><input id="responseSize" type="number" min="16" max="32"></div></div>'
+          )
+          s=s.replace(old,controls,1)
           p.write_text(s,encoding='utf-8')
 
-          # ETNIKA config gets explicit typography values.
           p=Path('projects/etnika.json'); j=json.loads(p.read_text(encoding='utf-8'))
           d=j.setdefault('design',{})
           for k in ['bodySize','kickerSize','summarySize','authorSize','metaSize','ratingSize','buttonSize','actionSize','responseSize']:
             d[k]=max(16,int(d.get(k,16) or 16))
           p.write_text(json.dumps(j,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 
-          # No service UI text below 16px.
           for name in ['landing.css','app.css','builder.css','client.css']:
             p=Path(name); s=p.read_text(encoding='utf-8')
             s=re.sub(r'font-size:(\d+)px',lambda m:f"font-size:{max(16,int(m.group(1)))}px",s)
             def fix_font(m):
-              n=int(m.group(2)); return 'font:'+m.group(1)+str(max(16,n))+'px'
+              n=int(m.group(2))
+              return 'font:'+m.group(1)+str(max(16,n))+'px'
             s=re.sub(r'font:([^;{}]*?)(\d+)px',fix_font,s)
             p.write_text(s,encoding='utf-8')
           PY
