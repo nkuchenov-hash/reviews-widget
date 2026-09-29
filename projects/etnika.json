@@ -50,7 +50,15 @@
     "showSummary": true,
     "showMedia": true,
     "showBusinessResponse": true,
-    "showReactions": true
+    "showReactions": true,
+    "kickerSize": 16,
+    "summarySize": 16,
+    "authorSize": 16,
+    "metaSize": 16,
+    "ratingSize": 16,
+    "buttonSize": 16,
+    "actionSize": 16,
+    "responseSize": 16
   },
   "content": {
     "title": "Отзывы наших клиентов",
