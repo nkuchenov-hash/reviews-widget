@@ -12,7 +12,7 @@
   },
   "profile": {
     "name": "Студия автопортрета Этника",
-    "address": "Москва, улица Ленинская Слобода, 26",
+    "address": "Москва, улица Ленинская Слобода, 26, А",
     "categories": [
       "Фотостудия",
       "фотоуслуги",
@@ -23,11 +23,11 @@
       "+79259494497"
     ],
     "description": "Москва, ул. Ленинская Слобода, 26",
-    "photoCount": 44,
+    "photoCount": 43,
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-10-10T21:41:59.539958+00:00",
+  "fetchedAt": "2026-10-11T12:46:30.696811+00:00",
   "reviews": [
     {
       "id": "P94Rh3xBjdIVpNTRFfrdWGHB6r-hFsis",
@@ -61,30 +61,6 @@
         "text": "Дарья, благодарим вас за такой тёплый отзыв! 🫶\n\nКак прекрасно, что вы прочувствовали главную идею нашего формата — полную свободу и отсутствие неловкости перед камерой. Когда рядом только зеркало, пульт и вдохновение, действительно быстро расслабляешься и начинаешь получать искреннее удовольствие от процесса. Мы очень рады, что у вас это получилось!\n\nОтдельное спасибо за оценку стиля и комфорта — мы стараемся создавать атмосферу, в которой хочется творить.\n\nЖдём вас снова в Etnika Studio за новыми красивыми кадрами и приятными эмоциями! 📸✨\n\nС творческим теплом,\nкоманда Etnika Studio",
         "date": "2026-03-02T13:22:41.686Z"
       }
-    },
-    {
-      "id": "g5Nf4sJzC6vRiUfy2poiNASqYjJvlzV",
-      "author": "Лера Смирная",
-      "authorPublicId": "0j6ehhd8jqp20wzh6uxy50v3f8",
-      "authorLevel": "Знаток города 5 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/68143/MTELLhi0D1RCTzPTej6G9yWC68-1/islands-68",
-      "rating": 5,
-      "text": "Записалась в студию по сертификату. Администратор любезно по просьбе день в день перенесла запись чуть попозже по запросу 🙏🏼 очень уютная студия, как и администратор. Комфортное место! Чувствовалась полная свобода и раскованность. Точно приду еще! ♥️",
-      "date": "2026-10-10T13:18:47.354Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=0j6ehhd8jqp20wzh6uxy50v3f8&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [
-        {
-          "type": "photo",
-          "url": "https://avatars.mds.yandex.net/get-altay/21324406/2a000001a125f75f733e35d9f16d33dd6b1a/M"
-        }
-      ],
-      "videos": [],
-      "businessResponse": null
     },
     {
       "id": "lD9k7MIBbE_r_2JUwR6gq6nYXG6QO4nl",
@@ -5285,6 +5261,30 @@
         "text": "Наталия, спасибо за ваш отзыв! 😊\n\nНам очень приятно, что вам понравилось в ETNIKA STUDIO. Будем рады видеть вас снова для новых ярких фотосессий! 📸✨💛",
         "date": "2025-03-13T07:35:05.639Z"
       }
+    },
+    {
+      "id": "g5Nf4sJzC6vRiUfy2poiNASqYjJvlzV",
+      "author": "Лера Смирная",
+      "authorPublicId": "0j6ehhd8jqp20wzh6uxy50v3f8",
+      "authorLevel": "Знаток города 5 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/68143/MTELLhi0D1RCTzPTej6G9yWC68-1/islands-68",
+      "rating": 5,
+      "text": "Записалась в студию по сертификату. Администратор любезно по просьбе день в день перенесла запись чуть попозже по запросу 🙏🏼 очень уютная студия, как и администратор. Комфортное место! Чувствовалась полная свобода и раскованность. Точно приду еще! ♥️",
+      "date": "2026-10-10T13:18:47.354Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=0j6ehhd8jqp20wzh6uxy50v3f8&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [
+        {
+          "type": "photo",
+          "url": "https://avatars.mds.yandex.net/get-altay/21324406/2a000001a125f75f733e35d9f16d33dd6b1a/M"
+        }
+      ],
+      "videos": [],
+      "businessResponse": null
     }
   ]
 }
