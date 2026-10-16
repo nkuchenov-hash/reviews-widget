@@ -8,7 +8,7 @@
     "name": "Студия автопортрета Этника",
     "rating": 5,
     "ratingsCount": 237,
-    "reviewsCount": 213
+    "reviewsCount": 216
   },
   "profile": {
     "name": "Студия автопортрета Этника",
@@ -27,7 +27,7 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-10-15T21:20:54.717647+00:00",
+  "fetchedAt": "2026-10-16T04:29:19.399456+00:00",
   "reviews": [
     {
       "id": "P94Rh3xBjdIVpNTRFfrdWGHB6r-hFsis",
@@ -5263,6 +5263,31 @@
       }
     },
     {
+      "id": "e798uX5NfMbqvuPnz67iuEGxT_qYLAcm",
+      "author": "Маргарита",
+      "authorPublicId": "cmabaycgkcg6yrxapzufe73awr",
+      "authorLevel": "Знаток города 12 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/20289515/EzjWfL6kXzTwqcxMKtFXCNAbGI-1/islands-68",
+      "rating": 5,
+      "text": "Решила попробовать данный формат фотосъемки и подучить интересный опыт, эмоции и, конечно, фотографии. Все понравилось, найти локацию удобно, есть видео как добраться. Девушка администратор очень вежливая и приветливая, все быстро рассказала и показала. Вначале даже без фотографа стеснительно, а со временем все проще и проще фотографироваться. Буду приходить еще однозначно",
+      "date": "2026-10-15T17:24:53.158Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=cmabaycgkcg6yrxapzufe73awr&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [
+        {
+          "type": "video",
+          "url": "https://runtime.strm.yandex.ru/player/video/vplvxv4rkb5jrtkq5ywb",
+          "preview": ""
+        }
+      ],
+      "businessResponse": null
+    },
+    {
       "id": "g5Nf4sJzC6vRiUfy2poiNASqYjJvlzV",
       "author": "Лера Смирная",
       "authorPublicId": "0j6ehhd8jqp20wzh6uxy50v3f8",
@@ -5281,6 +5306,78 @@
         {
           "type": "photo",
           "url": "https://avatars.mds.yandex.net/get-altay/21324406/2a000001a125f75f733e35d9f16d33dd6b1a/M"
+        }
+      ],
+      "videos": [],
+      "businessResponse": null
+    },
+    {
+      "id": "9J3jEn4Du5xpqopbobzptH_b0OqzFnr",
+      "author": "Наталья",
+      "authorPublicId": "jaaz8vkv13k01jcj1d9ph4np2m",
+      "authorLevel": "Знаток города 6 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/53031/0s-5/islands-68",
+      "rating": 5,
+      "text": "Студия прекрасная, доброжелательная девушка Софья все показала, объяснила как пользоваться всем, проинструктировала. Мы были впервые с подружкой, и конечно часа не хватает, надо брать больше, но это в следующий раз. Уютная чистая студия, есть даже конфетки для хорошего настроения) очень рекомендую данную студию, и вернемся сюда сами еще не раз! Спасибо ❤️",
+      "date": "2026-10-15T09:52:57.559Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=jaaz8vkv13k01jcj1d9ph4np2m&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [
+        {
+          "type": "photo",
+          "url": "https://avatars.mds.yandex.net/get-altay/22330246/2a000001a13efab8cec40ec6b6887d98b333/M"
+        }
+      ],
+      "videos": [],
+      "businessResponse": null
+    },
+    {
+      "id": "6N3CCQEL-JMnY5bhJSpw8Z8ZQ1tWT1h-",
+      "author": "Ирина",
+      "authorPublicId": "dc6uc8kfxak36eb1mw6qccj5xm",
+      "authorLevel": "Знаток города 7 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/64336/eextJ2ayeXirMuJl6F5I18O0A-1/islands-68",
+      "rating": 5,
+      "text": "Первый раз была на съемке в таком формате и все очень понравилось) Девушка-админ - самая настоящая душка!)) Безумно ей благодарна) На протяжении всей съемки помогала, все объясняла, корректировала, чтобы получились шикарные кадры. Очень выручили тем, что прислали фоточки сразу после съемки, я успела подретушировать их и выставить вовремя на свой ДР) За такую отзывчивость и оперативность просто 10 из 10 звезд студии!) Еще и презент сделали ко дню рождения - это было крайне мило и приятно!) От всей души рекомендую и обязательно приду сама еще раз🫶",
+      "date": "2026-10-14T07:54:18.282Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=dc6uc8kfxak36eb1mw6qccj5xm&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [
+        {
+          "type": "photo",
+          "url": "https://avatars.mds.yandex.net/get-altay/18762305/2a000001a13967cede44369ffe7e81441afd/M"
+        },
+        {
+          "type": "photo",
+          "url": "https://avatars.mds.yandex.net/get-altay/19829002/2a000001a13b1a196f2d82e1d422200a69ab/M"
+        },
+        {
+          "type": "photo",
+          "url": "https://avatars.mds.yandex.net/get-altay/20879492/2a000001a139686bbfa45b8d6d13c79ab49d/M"
+        },
+        {
+          "type": "photo",
+          "url": "https://avatars.mds.yandex.net/get-altay/20933263/2a000001a13976117844a249f8414521476a/M"
+        },
+        {
+          "type": "photo",
+          "url": "https://avatars.mds.yandex.net/get-altay/20942336/2a000001a13b19cbd28887e5dbbfb235b157/M"
+        },
+        {
+          "type": "photo",
+          "url": "https://avatars.mds.yandex.net/get-altay/21078505/2a000001a13b1a626424dbc6c2acec603a20/M"
+        },
+        {
+          "type": "photo",
+          "url": "https://avatars.mds.yandex.net/get-altay/22243000/2a000001a1396805bee2c057f9a7e97ad5ff/M"
         }
       ],
       "videos": [],
