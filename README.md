@@ -2,6 +2,10 @@
 
 Universal configurable reviews widget with a browser-based builder.
 
+## Current display modes and data refresh (2026-10-17)
+
+The builder supports **native Yandex iframe mode** and **custom-designed review cards**. In custom mode, project JSON data is refreshed by `.github/workflows/sync-yandex.yml` (scheduled every three hours when GitHub Actions runs successfully), not by a live browser API call. Actual data freshness must be verified; a scheduled workflow alone is not a freshness guarantee. See `docs/DOCUMENTATION_PARITY_2026-10-17.md`.
+
 ## GitHub Pages mode
 
 The static GitHub Pages version supports:
