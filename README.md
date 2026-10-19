@@ -18,7 +18,7 @@ The static GitHub Pages version supports:
 
 Yandex Live content is refreshed by Yandex automatically.
 
-GitHub Pages cannot run the Node.js backend. Server-side JSON synchronization, shared persistent widget configuration, authentication, and scheduled sync will be enabled later when the backend is deployed to a server.
+GitHub Pages cannot execute the Node.js backend. However, `.github/workflows/sync-yandex.yml` already refreshes static project review JSON on a schedule using GitHub Actions, subject to workflow success and upstream availability. A separate persistent server-backed configuration/authentication layer remains future work.
 
 ## Publish on GitHub Pages
 
