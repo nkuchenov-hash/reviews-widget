@@ -27,7 +27,7 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-10-21T17:09:43.095061+00:00",
+  "fetchedAt": "2026-10-21T21:40:58.675112+00:00",
   "reviews": [
     {
       "id": "P94Rh3xBjdIVpNTRFfrdWGHB6r-hFsis",
@@ -611,7 +611,7 @@
       "id": "VTeGtdtrs_q_e16xHq9eI-p_zv85toS",
       "author": "Валерия",
       "authorPublicId": "p369dpfqvazwz1hp9yfwdu2wj0",
-      "authorLevel": "Знаток города 9 уровня",
+      "authorLevel": "Знаток города 10 уровня",
       "avatar": "https://avatars.mds.yandex.net/get-yapic/30955/5vKDTTywBnUHpdzfhGBxvQrNtg-1/islands-68",
       "rating": 5,
       "text": "Тот случай, когда результат превзошел все ожидания! 😍\n\nЕсли честно, мы не питали особых иллюзий относительно т формата съемки без фотографа. В студии есть только вы, зеркало и кнопка. Скорее шли просто весело провести время. Думаю ладно, штук 5 нормальных фотографий будет и то не зря собрались . \n\nА когда нам прислали ссылку (спустя 2 часа, на минуточку) я была в шоке 😅 Мы отобрали больше 50 классных фотографий! Надо теперь их срочно распечатать и добавить в альбом 🥹\n\nПомимо крутых фотографий, это просто отличный вариант свидания, встречи с подружками. Определено лайк! 🫶",
@@ -4208,7 +4208,7 @@
       "id": "e8DGTNli-DvQWUUIe5A7HUM8oPKl-m",
       "author": "Анастасия Ш.",
       "authorPublicId": "hczpxbb5vcaunbkm4yj88a485c",
-      "authorLevel": "Знаток города 3 уровня",
+      "authorLevel": "Знаток города 4 уровня",
       "avatar": "https://avatars.mds.yandex.net/get-yapic/25817/0y-3/islands-68",
       "rating": 5,
       "text": "Студия понравилась, \nДружелюбный персонал и оперативная координация \nПридем снова, спасибо ",
@@ -5152,6 +5152,25 @@
       }
     },
     {
+      "id": "J8BEEUMGCosfmGsU8AF19spBkxP4_C85",
+      "author": "Виктория П.",
+      "authorPublicId": "4j5v56rrnae3q2qr86k6t8h0y4",
+      "authorLevel": "Знаток города 4 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/61207/VHXkWTyNQUO1EUDGFbGSW1u6MYY-1/islands-68",
+      "rating": 5,
+      "text": "шикарная студия! фотки получились очень хорошие и качественные, всем советую) ",
+      "date": "2026-10-20T15:56:18.012Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=4j5v56rrnae3q2qr86k6t8h0y4&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": null
+    },
+    {
       "id": "87cho_AcRuUzpQf7Wn3yIwvcZ1Ulc4-TA",
       "author": "Антон Агапов",
       "authorPublicId": "8bythe5v87nbzcgmg3w6derq74",
@@ -5172,6 +5191,25 @@
         "text": "Антон, благодарим вас за отзыв и рекомендацию! ❤️\n\nНам очень приятно, что вы оценили нашу студию. Ждём вас снова за новыми красивыми кадрами! 📸✨\n\nС творческим теплом,\nкоманда студии автопортрета Этника",
         "date": "2026-09-29T07:21:06.924Z"
       }
+    },
+    {
+      "id": "O6O1lixAcpavfOQmIuL4MMNLlFKpdZ3",
+      "author": "Ульяна Васильева",
+      "authorPublicId": "8b4jme38fj1jae7bpvhn2405yr",
+      "authorLevel": "Знаток города 3 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/6218514/ITiKSk1Lfguleg3Gzb63uMSUk-1/islands-68",
+      "rating": 5,
+      "text": "Очень хорошее место !! Персонал вежливый, приятный. Студия вообще супер. Декор есть , стулья есть для разнообразия фотографий. Всем советуююююю",
+      "date": "2026-10-20T12:52:43.915Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=8b4jme38fj1jae7bpvhn2405yr&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": null
     },
     {
       "id": "Llwup_NOi6AzBpJhV4vlAAGWS-IMosQ",
