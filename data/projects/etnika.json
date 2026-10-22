@@ -8,7 +8,7 @@
     "name": "Студия автопортрета Этника",
     "rating": 5,
     "ratingsCount": 241,
-    "reviewsCount": 220
+    "reviewsCount": 221
   },
   "profile": {
     "name": "Студия автопортрета Этника",
@@ -27,7 +27,7 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-10-22T17:08:22.583179+00:00",
+  "fetchedAt": "2026-10-22T21:33:26.645745+00:00",
   "reviews": [
     {
       "id": "P94Rh3xBjdIVpNTRFfrdWGHB6r-hFsis",
@@ -5171,7 +5171,7 @@
       "id": "Gi_85rTUHg0bzeejrlcJC76P4SDA0b-VT",
       "author": "настяя",
       "authorPublicId": "z7kyz29u7x0z8a4v298x8j7pur",
-      "authorLevel": "Знаток города 2 уровня",
+      "authorLevel": "Знаток города 3 уровня",
       "avatar": "https://avatars.mds.yandex.net/get-yapic/40841/sst1ncLQOJOKkUI0PB0W0zeIpQ-1/islands-68",
       "rating": 5,
       "text": "Шикарная студия, очень вежливый администратор, тут уже второй раз и все нравится, всем советую именно сюда и цены очень приятные ",
@@ -5458,6 +5458,25 @@
         "text": "Наталия, спасибо за ваш отзыв! 😊\n\nНам очень приятно, что вам понравилось в ETNIKA STUDIO. Будем рады видеть вас снова для новых ярких фотосессий! 📸✨💛",
         "date": "2025-03-13T07:35:05.639Z"
       }
+    },
+    {
+      "id": "-k68XUX67jxTTZXOjB8xyT_7adVN8WrZ",
+      "author": "Юлия В",
+      "authorPublicId": "",
+      "authorLevel": "Знаток города 7 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/45131/0f-5/islands-68",
+      "rating": 5,
+      "text": "Прикольное место. Сходили всей семьей. Провели время вместе и нафоткались от души. Супер. Рекомендую",
+      "date": "2026-10-22T12:02:13.425Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": null
     }
   ]
 }
