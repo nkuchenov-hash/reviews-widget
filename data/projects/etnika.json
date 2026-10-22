@@ -8,7 +8,7 @@
     "name": "Студия автопортрета Этника",
     "rating": 5,
     "ratingsCount": 241,
-    "reviewsCount": 219
+    "reviewsCount": 220
   },
   "profile": {
     "name": "Студия автопортрета Этника",
@@ -27,7 +27,7 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-10-21T21:40:58.675112+00:00",
+  "fetchedAt": "2026-10-22T04:40:48.030691+00:00",
   "reviews": [
     {
       "id": "P94Rh3xBjdIVpNTRFfrdWGHB6r-hFsis",
@@ -2815,7 +2815,7 @@
     {
       "id": "UpSgNnWZ6-dBq0_-Uxha9GoUzhRlh-",
       "author": "Наталия Курилко",
-      "authorPublicId": "",
+      "authorPublicId": "y2h19v5f7v2xmab3bm58mxad0c",
       "authorLevel": "Знаток города 3 уровня",
       "avatar": "https://avatars.mds.yandex.net/get-yapic/26057/0m-6/islands-68",
       "rating": 5,
@@ -2824,7 +2824,7 @@
       "createdDate": "",
       "edited": false,
       "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=y2h19v5f7v2xmab3bm58mxad0c&utm_source=review",
       "likes": 0,
       "dislikes": 0,
       "photos": [],
