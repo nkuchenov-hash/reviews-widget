@@ -7,7 +7,7 @@
   "summary": {
     "name": "Студия автопортрета Этника",
     "rating": 5,
-    "ratingsCount": 241,
+    "ratingsCount": 244,
     "reviewsCount": 221
   },
   "profile": {
@@ -27,7 +27,7 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-10-22T21:33:26.645745+00:00",
+  "fetchedAt": "2026-10-23T04:46:07.702827+00:00",
   "reviews": [
     {
       "id": "P94Rh3xBjdIVpNTRFfrdWGHB6r-hFsis",
@@ -2550,32 +2550,10 @@
       }
     },
     {
-      "id": "Phbm9rQJ-XUdvtsZjyBBTztJOrQ4AXZF",
-      "author": "Алина Р.",
-      "authorPublicId": "fk07zkmv11563ky07anha56t4r",
-      "authorLevel": "Знаток города 5 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/28053/deYtGI7klljKs1h0Y7rsY2EF9c-1/islands-68",
-      "rating": 5,
-      "text": "Сегодня с мужем снимали в студии беременную фотосессию, все супер! 😍 \nОчень удобная студия, есть классный реквизит, фотки скинули через пару часов 👍🏻 \nСпасибо)) ",
-      "date": "2026-04-25T18:10:55.860Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=fk07zkmv11563ky07anha56t4r&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [],
-      "videos": [],
-      "businessResponse": {
-        "text": "Алина, поздравляем вас с таким трогательным и важным событием! ❤️ Нам очень приятно, что вы выбрали Etnika Studio для создания этих особенных кадров.\n\nРады, что вам всё понравилось: удобство студии, реквизит и оперативность отправки фотографий. Передадим вашу благодарность команде 😊\n\nЖелаем вам лёгкой беременности и с нетерпением ждём вас снова — возможно, уже с малышом на семейную съёмку! 📸✨\n\nС творческим теплом,\nкоманда Etnika Studio",
-        "date": "2026-04-28T13:07:45.988Z"
-      }
-    },
-    {
       "id": "mvF--d-nVj_We4004qL26kSIl2KRkkM4L",
       "author": "Влада Маркуш",
       "authorPublicId": "8pp1bavvdxqj3r3n24h7exy0n0",
-      "authorLevel": "Знаток города 4 уровня",
+      "authorLevel": "Знаток города 5 уровня",
       "avatar": "https://avatars.mds.yandex.net/get-yapic/59871/0f-4/islands-68",
       "rating": 5,
       "text": "очень интересный и новый для меня формат съемок: получилось насладиться процессом! фотки получаются красивые, четкие, для соцсетей - огонь)\nсоветую попробовать и световые схемы - это точно не как у всех. я довольна! точно приду еще",
@@ -3569,6 +3547,28 @@
       }
     },
     {
+      "id": "Phbm9rQJ-XUdvtsZjyBBTztJOrQ4AXZF",
+      "author": "Алина Р.",
+      "authorPublicId": "fk07zkmv11563ky07anha56t4r",
+      "authorLevel": "Знаток города 5 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/28053/deYtGI7klljKs1h0Y7rsY2EF9c-1/islands-68",
+      "rating": 5,
+      "text": "Сегодня с мужем снимали в студии беременную фотосессию, все супер! 😍 \nОчень удобная студия, есть классный реквизит, фотки скинули через пару часов 👍🏻 \nСпасибо)) ",
+      "date": "2026-04-25T18:10:55.860Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=fk07zkmv11563ky07anha56t4r&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": {
+        "text": "Алина, поздравляем вас с таким трогательным и важным событием! ❤️ Нам очень приятно, что вы выбрали Etnika Studio для создания этих особенных кадров.\n\nРады, что вам всё понравилось: удобство студии, реквизит и оперативность отправки фотографий. Передадим вашу благодарность команде 😊\n\nЖелаем вам лёгкой беременности и с нетерпением ждём вас снова — возможно, уже с малышом на семейную съёмку! 📸✨\n\nС творческим теплом,\nкоманда Etnika Studio",
+        "date": "2026-04-28T13:07:45.988Z"
+      }
+    },
+    {
       "id": "AgJEY24L_exVpV6JJOXA9WFNuxQYGXP",
       "author": "Марианна",
       "authorPublicId": "",
@@ -3655,6 +3655,30 @@
         "text": "Анастасия, спасибо вам за такие искренние эмоции! 💫\n\nОчень рады, что первый опыт съёмки без фотографа оказался таким вдохновляющим и комфортным. Именно ради этого мы создали студию автопортрета ETNIKA — чтобы каждый чувствовал себя свободно, уверенно и получал удовольствие от процесса 📸\n\nБудем ждать вас снова за новыми кадрами и отличным настроением! 🤍",
         "date": "2025-10-13T07:55:15.420Z"
       }
+    },
+    {
+      "id": "Gi_85rTUHg0bzeejrlcJC76P4SDA0b-VT",
+      "author": "настяя",
+      "authorPublicId": "z7kyz29u7x0z8a4v298x8j7pur",
+      "authorLevel": "Знаток города 3 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/40841/sst1ncLQOJOKkUI0PB0W0zeIpQ-1/islands-68",
+      "rating": 5,
+      "text": "Шикарная студия, очень вежливый администратор, тут уже второй раз и все нравится, всем советую именно сюда и цены очень приятные ",
+      "date": "2026-10-21T12:49:09.515Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=z7kyz29u7x0z8a4v298x8j7pur&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [
+        {
+          "type": "photo",
+          "url": "https://avatars.mds.yandex.net/get-altay/21039103/2a000001a1639bd1a0d235771d9e4b20fa72/M"
+        }
+      ],
+      "videos": [],
+      "businessResponse": null
     },
     {
       "id": "dbg750D037bzdXqN0k_BW-WF4n01QsB",
@@ -4115,6 +4139,25 @@
         "text": "Елена, спасибо вам огромное за такой тёплый отзыв и за то, что уже дважды приходили к нам в студию автопортрета ETNIKA STUDIO.\nОчень приятно, что вам нравятся получающиеся фотографии и формат, где можно полностью раскрепоститься и получать чудесные кадры. Администраторам обязательно передадим ваши слова — им важно знать, что забота и оперативная отправка фото в этот же день делают ваш опыт таким комфортным.\nС нетерпением ждём вас снова за новыми образами и ещё одной вдохновляющей фотосессией!",
         "date": "2025-12-22T10:01:40.961Z"
       }
+    },
+    {
+      "id": "O6O1lixAcpavfOQmIuL4MMNLlFKpdZ3",
+      "author": "Ульяна Васильева",
+      "authorPublicId": "8b4jme38fj1jae7bpvhn2405yr",
+      "authorLevel": "Знаток города 3 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/6218514/ITiKSk1Lfguleg3Gzb63uMSUk-1/islands-68",
+      "rating": 5,
+      "text": "Очень хорошее место !! Персонал вежливый, приятный. Студия вообще супер. Декор есть , стулья есть для разнообразия фотографий. Всем советуююююю",
+      "date": "2026-10-20T12:52:43.915Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=8b4jme38fj1jae7bpvhn2405yr&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": null
     },
     {
       "id": "hMi6X5yiD8FXOpjKkbxuHRbP0SSfQ4",
@@ -4795,6 +4838,25 @@
       }
     },
     {
+      "id": "J8BEEUMGCosfmGsU8AF19spBkxP4_C85",
+      "author": "Виктория П.",
+      "authorPublicId": "4j5v56rrnae3q2qr86k6t8h0y4",
+      "authorLevel": "Знаток города 4 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/61207/VHXkWTyNQUO1EUDGFbGSW1u6MYY-1/islands-68",
+      "rating": 5,
+      "text": "шикарная студия! фотки получились очень хорошие и качественные, всем советую) ",
+      "date": "2026-10-20T15:56:18.012Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=4j5v56rrnae3q2qr86k6t8h0y4&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": null
+    },
+    {
       "id": "nynJfyZFdJFMh8M73ZAta_7k19_-F2",
       "author": "Татьяна К.",
       "authorPublicId": "27wpr1nyc11zq4ej4a4w484j6w",
@@ -5108,25 +5170,6 @@
       }
     },
     {
-      "id": "J8BEEUMGCosfmGsU8AF19spBkxP4_C85",
-      "author": "Виктория П.",
-      "authorPublicId": "4j5v56rrnae3q2qr86k6t8h0y4",
-      "authorLevel": "Знаток города 4 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/61207/VHXkWTyNQUO1EUDGFbGSW1u6MYY-1/islands-68",
-      "rating": 5,
-      "text": "шикарная студия! фотки получились очень хорошие и качественные, всем советую) ",
-      "date": "2026-10-20T15:56:18.012Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=4j5v56rrnae3q2qr86k6t8h0y4&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [],
-      "videos": [],
-      "businessResponse": null
-    },
-    {
       "id": "LbsJjCg56AFHQ69FhJ1e9zPuvjIGi3NfS",
       "author": "Анжела Нагдалян",
       "authorPublicId": "vgzvdan79xwzhg4yyanm6mdwg8",
@@ -5147,44 +5190,6 @@
         "text": "Анжела, благодарим за такой тёплый отзыв! ❤️\n Нам очень приятно, что вы оценили атмосферу нашей студии и работу команды.\n\nМы стараемся создавать пространство, где каждый чувствует себя комфортно и может раскрыться перед камерой. Ваши слова — лучшая награда для нас!\n\nЖдём вас снова в Etnika Studio — возможно, попробуем новые образы или тематическую съёмку? Будем рады создать для вас ещё больше красивых кадров! 📸\n\nС творческими пожеланиями,\nкоманда Etnika Studio",
         "date": "2025-11-07T08:23:00.864Z"
       }
-    },
-    {
-      "id": "O6O1lixAcpavfOQmIuL4MMNLlFKpdZ3",
-      "author": "Ульяна Васильева",
-      "authorPublicId": "8b4jme38fj1jae7bpvhn2405yr",
-      "authorLevel": "Знаток города 3 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/6218514/ITiKSk1Lfguleg3Gzb63uMSUk-1/islands-68",
-      "rating": 5,
-      "text": "Очень хорошее место !! Персонал вежливый, приятный. Студия вообще супер. Декор есть , стулья есть для разнообразия фотографий. Всем советуююююю",
-      "date": "2026-10-20T12:52:43.915Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=8b4jme38fj1jae7bpvhn2405yr&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [],
-      "videos": [],
-      "businessResponse": null
-    },
-    {
-      "id": "Gi_85rTUHg0bzeejrlcJC76P4SDA0b-VT",
-      "author": "настяя",
-      "authorPublicId": "z7kyz29u7x0z8a4v298x8j7pur",
-      "authorLevel": "Знаток города 3 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/40841/sst1ncLQOJOKkUI0PB0W0zeIpQ-1/islands-68",
-      "rating": 5,
-      "text": "Шикарная студия, очень вежливый администратор, тут уже второй раз и все нравится, всем советую именно сюда и цены очень приятные ",
-      "date": "2026-10-21T12:49:09.515Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=z7kyz29u7x0z8a4v298x8j7pur&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [],
-      "videos": [],
-      "businessResponse": null
     },
     {
       "id": "zNfUmd_pcmWjT_oRxkZiZvX-rvzTNF",
@@ -5273,6 +5278,30 @@
         "text": "Уважаемая Kris, спасибо вам за отзыв и важное техническое замечание! Приносим извинения за временные неудобства — пульт для съёмки должен работать идеально, и мы уже проверили и заменили оборудование, чтобы такая ситуация больше не повторялась.\n\nОчень рады, что, несмотря на этот момент, ваши впечатления от фотосессии остались положительными. Мы всегда стремимся создавать комфортную и технически безупречную атмосферу для творчества.\n\nБудем рады видеть вас снова — на этот раз уже с полностью исправным пультом и, возможно, с новым реквизитом или тематической подсветкой 😊\n\nС творческим настроением,\nкоманда Etnika Studio.\n\n",
         "date": "2026-02-04T12:25:43.077Z"
       }
+    },
+    {
+      "id": "-k68XUX67jxTTZXOjB8xyT_7adVN8WrZ",
+      "author": "Юлия В",
+      "authorPublicId": "",
+      "authorLevel": "Знаток города 7 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/45131/0f-5/islands-68",
+      "rating": 5,
+      "text": "Прикольное место. Сходили всей семьей. Провели время вместе и нафоткались от души. Супер. Рекомендую",
+      "date": "2026-10-22T12:02:13.425Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [
+        {
+          "type": "photo",
+          "url": "https://avatars.mds.yandex.net/get-altay/21097519/2a000001a1637daa5caa63d1c1ed92786e8b/M"
+        }
+      ],
+      "videos": [],
+      "businessResponse": null
     },
     {
       "id": "sSesXGk5sOlxwOLqj2B97X77ABN2WI",
@@ -5458,25 +5487,6 @@
         "text": "Наталия, спасибо за ваш отзыв! 😊\n\nНам очень приятно, что вам понравилось в ETNIKA STUDIO. Будем рады видеть вас снова для новых ярких фотосессий! 📸✨💛",
         "date": "2025-03-13T07:35:05.639Z"
       }
-    },
-    {
-      "id": "-k68XUX67jxTTZXOjB8xyT_7adVN8WrZ",
-      "author": "Юлия В",
-      "authorPublicId": "",
-      "authorLevel": "Знаток города 7 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/45131/0f-5/islands-68",
-      "rating": 5,
-      "text": "Прикольное место. Сходили всей семьей. Провели время вместе и нафоткались от души. Супер. Рекомендую",
-      "date": "2026-10-22T12:02:13.425Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [],
-      "videos": [],
-      "businessResponse": null
     }
   ]
 }
