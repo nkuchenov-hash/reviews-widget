@@ -27,40 +27,32 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-10-23T11:35:26.862279+00:00",
+  "fetchedAt": "2026-10-23T17:04:23.831403+00:00",
   "reviews": [
     {
-      "id": "P94Rh3xBjdIVpNTRFfrdWGHB6r-hFsis",
-      "author": "Кравцова Дарья",
-      "authorPublicId": "t74971jtf12g8zjhpf9ubwe3vc",
-      "authorLevel": "Знаток города 7 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/25358/0d-5/islands-68",
+      "id": "e798uX5NfMbqvuPnz67iuEGxT_qYLAcm",
+      "author": "Маргарита",
+      "authorPublicId": "cmabaycgkcg6yrxapzufe73awr",
+      "authorLevel": "Знаток города 12 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/20289515/EzjWfL6kXzTwqcxMKtFXCNAbGI-1/islands-68",
       "rating": 5,
-      "text": "Очень понравился формат студии автопортрета. Ты в зале одна — без фотографа и без неловкости, только зеркало и пульт. Быстро расслабляешься и получаешь удовольствие от процесса. Атмосфера стильная и комфортная. Обязательно приду ещё🫶",
-      "date": "2026-03-01T11:40:49.620Z",
+      "text": "Решила попробовать данный формат фотосъемки и подучить интересный опыт, эмоции и, конечно, фотографии. Все понравилось, найти локацию удобно, есть видео как добраться. Девушка администратор очень вежливая и приветливая, все быстро рассказала и показала. Вначале даже без фотографа стеснительно, а со временем все проще и проще фотографироваться. Буду приходить еще однозначно",
+      "date": "2026-10-15T17:24:53.158Z",
       "createdDate": "",
       "edited": false,
       "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=t74971jtf12g8zjhpf9ubwe3vc&utm_source=review",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=cmabaycgkcg6yrxapzufe73awr&utm_source=review",
       "likes": 0,
       "dislikes": 0,
-      "photos": [
-        {
-          "type": "photo",
-          "url": "https://avatars.mds.yandex.net/get-altay/17773264/2a0000019ca93384443b7488424e46e5cb12/M"
-        }
-      ],
+      "photos": [],
       "videos": [
         {
           "type": "video",
-          "url": "https://runtime.strm.yandex.ru/player/video/vplve5v2sxgnighf3brc",
+          "url": "https://runtime.strm.yandex.ru/player/video/vplvxv4rkb5jrtkq5ywb",
           "preview": ""
         }
       ],
-      "businessResponse": {
-        "text": "Дарья, благодарим вас за такой тёплый отзыв! 🫶\n\nКак прекрасно, что вы прочувствовали главную идею нашего формата — полную свободу и отсутствие неловкости перед камерой. Когда рядом только зеркало, пульт и вдохновение, действительно быстро расслабляешься и начинаешь получать искреннее удовольствие от процесса. Мы очень рады, что у вас это получилось!\n\nОтдельное спасибо за оценку стиля и комфорта — мы стараемся создавать атмосферу, в которой хочется творить.\n\nЖдём вас снова в Etnika Studio за новыми красивыми кадрами и приятными эмоциями! 📸✨\n\nС творческим теплом,\nкоманда Etnika Studio",
-        "date": "2026-03-02T13:22:41.686Z"
-      }
+      "businessResponse": null
     },
     {
       "id": "lD9k7MIBbE_r_2JUwR6gq6nYXG6QO4nl",
@@ -1419,31 +1411,6 @@
       }
     },
     {
-      "id": "e798uX5NfMbqvuPnz67iuEGxT_qYLAcm",
-      "author": "Маргарита",
-      "authorPublicId": "cmabaycgkcg6yrxapzufe73awr",
-      "authorLevel": "Знаток города 12 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/20289515/EzjWfL6kXzTwqcxMKtFXCNAbGI-1/islands-68",
-      "rating": 5,
-      "text": "Решила попробовать данный формат фотосъемки и подучить интересный опыт, эмоции и, конечно, фотографии. Все понравилось, найти локацию удобно, есть видео как добраться. Девушка администратор очень вежливая и приветливая, все быстро рассказала и показала. Вначале даже без фотографа стеснительно, а со временем все проще и проще фотографироваться. Буду приходить еще однозначно",
-      "date": "2026-10-15T17:24:53.158Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=cmabaycgkcg6yrxapzufe73awr&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [],
-      "videos": [
-        {
-          "type": "video",
-          "url": "https://runtime.strm.yandex.ru/player/video/vplvxv4rkb5jrtkq5ywb",
-          "preview": ""
-        }
-      ],
-      "businessResponse": null
-    },
-    {
       "id": "xF7TfgTRFJm8iJbwiFVibR4449yptuL",
       "author": "Юлия З.",
       "authorPublicId": "1wmf8qh1wymdqwr3eqj7cxdz2g",
@@ -1622,6 +1589,39 @@
       "businessResponse": {
         "text": "Виктория, огромное спасибо за такой вдохновляющий отзыв! \n\nНам невероятно приятно, что вы почувствовали себя уверенно и комфортно — именно ради этого мы и создаем атмосферу уюта в нашей студии автопортрета. Очень рады, что фотографии получились такими живыми и яркими — значит, всё получилось именно так, как нужно! Будем ждать вас снова за новыми красивыми фото без фотографа.",
         "date": "2025-05-11T17:03:48.137Z"
+      }
+    },
+    {
+      "id": "P94Rh3xBjdIVpNTRFfrdWGHB6r-hFsis",
+      "author": "Кравцова Дарья",
+      "authorPublicId": "t74971jtf12g8zjhpf9ubwe3vc",
+      "authorLevel": "Знаток города 7 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/25358/0d-5/islands-68",
+      "rating": 5,
+      "text": "Очень понравился формат студии автопортрета. Ты в зале одна — без фотографа и без неловкости, только зеркало и пульт. Быстро расслабляешься и получаешь удовольствие от процесса. Атмосфера стильная и комфортная. Обязательно приду ещё🫶",
+      "date": "2026-03-01T11:40:49.620Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=t74971jtf12g8zjhpf9ubwe3vc&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [
+        {
+          "type": "photo",
+          "url": "https://avatars.mds.yandex.net/get-altay/17773264/2a0000019ca93384443b7488424e46e5cb12/M"
+        }
+      ],
+      "videos": [
+        {
+          "type": "video",
+          "url": "https://runtime.strm.yandex.ru/player/video/vplve5v2sxgnighf3brc",
+          "preview": ""
+        }
+      ],
+      "businessResponse": {
+        "text": "Дарья, благодарим вас за такой тёплый отзыв! 🫶\n\nКак прекрасно, что вы прочувствовали главную идею нашего формата — полную свободу и отсутствие неловкости перед камерой. Когда рядом только зеркало, пульт и вдохновение, действительно быстро расслабляешься и начинаешь получать искреннее удовольствие от процесса. Мы очень рады, что у вас это получилось!\n\nОтдельное спасибо за оценку стиля и комфорта — мы стараемся создавать атмосферу, в которой хочется творить.\n\nЖдём вас снова в Etnika Studio за новыми красивыми кадрами и приятными эмоциями! 📸✨\n\nС творческим теплом,\nкоманда Etnika Studio",
+        "date": "2026-03-02T13:22:41.686Z"
       }
     },
     {
