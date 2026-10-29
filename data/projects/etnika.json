@@ -27,7 +27,7 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-10-29T00:53:56.321533+00:00",
+  "fetchedAt": "2026-10-29T09:55:22.449727+00:00",
   "reviews": [
     {
       "id": "e798uX5NfMbqvuPnz67iuEGxT_qYLAcm",
@@ -2166,9 +2166,9 @@
     },
     {
       "id": "I47LDC6vFhS60WH_MwVuryHkBq5bQEeh0",
-      "author": "Инна Хиялова",
-      "authorPublicId": "pdkum6v0v8z4gwb27bbekgb2d0",
-      "authorLevel": "Знаток города 4 уровня",
+      "author": "Пользователь Яндекса",
+      "authorPublicId": "",
+      "authorLevel": "",
       "avatar": "",
       "rating": 5,
       "text": "Очень классная студия! Были небольшие трудности с пропуском, но в остальном все супер.оправляют подробный маршрут, где и как проходить.встретила приятная девушка,которая все показала и рассказала.в студии есть Алиса и можно включить свою музыку для более приятной обстановки)\nСАМОЕ ПРИЯТНОЕ можно с любимым питомцем,очень давно мечали об этой фотосессии,волновались, но все прошло замечательно!обязательно придем еще!🥰",
@@ -2176,7 +2176,7 @@
       "createdDate": "",
       "edited": false,
       "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=pdkum6v0v8z4gwb27bbekgb2d0&utm_source=review",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/",
       "likes": 0,
       "dislikes": 0,
       "photos": [],
@@ -4529,28 +4529,6 @@
       }
     },
     {
-      "id": "SK-CezTi30uNcaRm6KunMDGfAN54E1gE",
-      "author": "Иван Назаров",
-      "authorPublicId": "fgxxyjgb1r1nkja5kbk1cgwd28",
-      "authorLevel": "Знаток города 3 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/26057/0l-2/islands-68",
-      "rating": 5,
-      "text": "Классная фотостудия, очень красивый интерьер! ",
-      "date": "2026-08-05T17:07:11.835Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=fgxxyjgb1r1nkja5kbk1cgwd28&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [],
-      "videos": [],
-      "businessResponse": {
-        "text": "Иван, благодарим вас за отзыв! ❤️\n\nНам очень приятно, что вы оценили интерьер нашей студии. Мы старались создать пространство, в котором приятно находиться и творить 😊\n\nЖдём вас снова за новыми красивыми кадрами! 📸✨\n\nС творческим теплом,\nкоманда студии автопортрета Этника",
-        "date": "2026-08-11T08:17:46.746Z"
-      }
-    },
-    {
       "id": "o-u93yZ2WRogfVdSoCmkTZCYFA47HxB",
       "author": "Мария",
       "authorPublicId": "9ajrwwhc80wqbppwedew6kp3mm",
@@ -4614,6 +4592,28 @@
       "businessResponse": {
         "text": "Спасибо, Елена! \n\nОчень приятно, что вам с подругой понравилась студия 😊 Уютная атмосфера, удобное расположение и комфорт во всём — именно этого мы и добиваемся для каждого гостя. Будем рады видеть вас снова!",
         "date": "2025-04-07T07:20:42.278Z"
+      }
+    },
+    {
+      "id": "SK-CezTi30uNcaRm6KunMDGfAN54E1gE",
+      "author": "Иван Назаров",
+      "authorPublicId": "fgxxyjgb1r1nkja5kbk1cgwd28",
+      "authorLevel": "Знаток города 3 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/26057/0l-2/islands-68",
+      "rating": 5,
+      "text": "Классная фотостудия, очень красивый интерьер! ",
+      "date": "2026-08-05T17:07:11.835Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=fgxxyjgb1r1nkja5kbk1cgwd28&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": {
+        "text": "Иван, благодарим вас за отзыв! ❤️\n\nНам очень приятно, что вы оценили интерьер нашей студии. Мы старались создать пространство, в котором приятно находиться и творить 😊\n\nЖдём вас снова за новыми красивыми кадрами! 📸✨\n\nС творческим теплом,\nкоманда студии автопортрета Этника",
+        "date": "2026-08-11T08:17:46.746Z"
       }
     },
     {
