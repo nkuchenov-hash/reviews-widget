@@ -7,8 +7,8 @@
   "summary": {
     "name": "Студия автопортрета Этника",
     "rating": 5,
-    "ratingsCount": 247,
-    "reviewsCount": 223
+    "ratingsCount": 248,
+    "reviewsCount": 224
   },
   "profile": {
     "name": "Студия автопортрета Этника",
@@ -27,7 +27,7 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-11-03T06:44:34.787729+00:00",
+  "fetchedAt": "2026-11-03T17:00:32.895409+00:00",
   "reviews": [
     {
       "id": "e798uX5NfMbqvuPnz67iuEGxT_qYLAcm",
@@ -5254,6 +5254,25 @@
         "text": "Анжела, благодарим за такой тёплый отзыв! ❤️\n Нам очень приятно, что вы оценили атмосферу нашей студии и работу команды.\n\nМы стараемся создавать пространство, где каждый чувствует себя комфортно и может раскрыться перед камерой. Ваши слова — лучшая награда для нас!\n\nЖдём вас снова в Etnika Studio — возможно, попробуем новые образы или тематическую съёмку? Будем рады создать для вас ещё больше красивых кадров! 📸\n\nС творческими пожеланиями,\nкоманда Etnika Studio",
         "date": "2025-11-07T08:23:00.864Z"
       }
+    },
+    {
+      "id": "nVD24efVkgPiA7XyYU1YaCbgn0Zq_PBrf",
+      "author": "Ника",
+      "authorPublicId": "3xmtf09b5b62924tekj1g8j3qc",
+      "authorLevel": "Знаток города 5 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/18057972/V2AdXMiZnLXLZAPYZb6YfZeRC8-1/islands-68",
+      "rating": 5,
+      "text": "Потрясающая студия в Москве! Общение с клиентами, коммуникация это просто вау! Готовы идти на уступки если ситуация того позволяет и от этого конечно впечатления только хорошие. \nЧто касается студии - очень красивая, уютная и чистая. \nФото отдали в течение трех часов, это вообще космос ! \nВсе ооочень понравилось, уверена что вернусь не раз ) ",
+      "date": "2026-11-03T03:39:55.511Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=3xmtf09b5b62924tekj1g8j3qc&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": null
     },
     {
       "id": "ZABOR6xW5KiwrSCxpUM7h6HwLuq0ji-G",
