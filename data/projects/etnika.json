@@ -7,7 +7,7 @@
   "summary": {
     "name": "Студия автопортрета Этника",
     "rating": 5,
-    "ratingsCount": 248,
+    "ratingsCount": 249,
     "reviewsCount": 224
   },
   "profile": {
@@ -27,7 +27,7 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-11-04T21:19:14.841819+00:00",
+  "fetchedAt": "2026-11-05T06:42:14.688576+00:00",
   "reviews": [
     {
       "id": "e798uX5NfMbqvuPnz67iuEGxT_qYLAcm",
@@ -877,10 +877,10 @@
     },
     {
       "id": "sNLn2oqBg8EsVE9RzYdQDdA5JSlouIY",
-      "author": "Lulya Lulya",
+      "author": "Юлия Куренкова",
       "authorPublicId": "4b4mgdzfm8184c3f7qh7wjj6vg",
       "authorLevel": "Знаток города 5 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/23186/qq09X0L61y79s39RU4mnikbmc-1/islands-68",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/18800700/T0ZHUdWI3MqQVEs7ZtScGywHGk-1/islands-68",
       "rating": 5,
       "text": "Отличная студия!\nОтзывчивый администратор, запись легкая и быстрая, максимально подробно всё разъясняется в переписке, отвечают на вопросы и содействуют комфортной съемке)\nОтлично подойдёт для тех, у кого мало опыта фотосессий, есть дискомфорт перед фотографом, или если нужно видеть себя со стороны перед фото)\nФото получились классные, отправили буквально в течение 2 часов) Если после вас никто не записан, можно продлить время, что очень очень удобно)\nПредоставляется реквизит, фоны на выбор, цветовые схемы, и даже вентилятор для воздушных фото!!\nОстались под впечатлением, до сих пор обсуждаем)",
       "date": "2026-01-11T18:39:34.547Z",
@@ -3547,6 +3547,25 @@
       }
     },
     {
+      "id": "nVD24efVkgPiA7XyYU1YaCbgn0Zq_PBrf",
+      "author": "Ника",
+      "authorPublicId": "3xmtf09b5b62924tekj1g8j3qc",
+      "authorLevel": "Знаток города 5 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/18057972/V2AdXMiZnLXLZAPYZb6YfZeRC8-1/islands-68",
+      "rating": 5,
+      "text": "Потрясающая студия в Москве! Общение с клиентами, коммуникация это просто вау! Готовы идти на уступки если ситуация того позволяет и от этого конечно впечатления только хорошие. \nЧто касается студии - очень красивая, уютная и чистая. \nФото отдали в течение трех часов, это вообще космос ! \nВсе ооочень понравилось, уверена что вернусь не раз ) ",
+      "date": "2026-11-03T03:39:55.511Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=3xmtf09b5b62924tekj1g8j3qc&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": null
+    },
+    {
       "id": "BKmYZvQJJh-KyuyDRpnoJZHpdgGQZZu",
       "author": "Виктория",
       "authorPublicId": "wzryf4dt3vyreke2n56j6m0m3c",
@@ -4828,28 +4847,6 @@
       }
     },
     {
-      "id": "BWC_Wk6KkMyk9stRM3qQBFuMfvYckJN3G",
-      "author": "Софья Михалина",
-      "authorPublicId": "vujeb0zg8k07phdw5ky5uxhpt8",
-      "authorLevel": "Знаток города 3 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/25817/0o-2/islands-68",
-      "rating": 5,
-      "text": "Очень понравилось место! Хоодили фоткаться с друзьями, качество фото🔥 \nПеерсанал тоже❤️ \n",
-      "date": "2025-05-05T18:33:39.511Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=vujeb0zg8k07phdw5ky5uxhpt8&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [],
-      "videos": [],
-      "businessResponse": {
-        "text": "Софья, спасибо большое за отзыв!\n\nНам очень приятно, что вы с друзьями отлично провели время в нашей студии автопортрета — именно для таких душевных съёмок мы всё и создаём. Рады, что фото понравились, и персонал оставил тёплое впечатление. Приходите ещё — будет ещё круче!",
-        "date": "2025-05-11T17:04:28.794Z"
-      }
-    },
-    {
       "id": "yzaj_N_pyq697AYdappnG6pPnFYGv41y",
       "author": "Ксюша Смирнова",
       "authorPublicId": "",
@@ -5185,6 +5182,28 @@
       }
     },
     {
+      "id": "BWC_Wk6KkMyk9stRM3qQBFuMfvYckJN3G",
+      "author": "Софья Михалина",
+      "authorPublicId": "vujeb0zg8k07phdw5ky5uxhpt8",
+      "authorLevel": "Знаток города 3 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/25817/0o-2/islands-68",
+      "rating": 5,
+      "text": "Очень понравилось место! Хоодили фоткаться с друзьями, качество фото🔥 \nПеерсанал тоже❤️ \n",
+      "date": "2025-05-05T18:33:39.511Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=vujeb0zg8k07phdw5ky5uxhpt8&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": {
+        "text": "Софья, спасибо большое за отзыв!\n\nНам очень приятно, что вы с друзьями отлично провели время в нашей студии автопортрета — именно для таких душевных съёмок мы всё и создаём. Рады, что фото понравились, и персонал оставил тёплое впечатление. Приходите ещё — будет ещё круче!",
+        "date": "2025-05-11T17:04:28.794Z"
+      }
+    },
+    {
       "id": "7l_ZaHYFBafzWlaKaBLeOYchcKmsAk9",
       "author": "Анастасия Ф.",
       "authorPublicId": "9hnj46bhm9tjyfzp1n7wud55tr",
@@ -5254,25 +5273,6 @@
         "text": "Анжела, благодарим за такой тёплый отзыв! ❤️\n Нам очень приятно, что вы оценили атмосферу нашей студии и работу команды.\n\nМы стараемся создавать пространство, где каждый чувствует себя комфортно и может раскрыться перед камерой. Ваши слова — лучшая награда для нас!\n\nЖдём вас снова в Etnika Studio — возможно, попробуем новые образы или тематическую съёмку? Будем рады создать для вас ещё больше красивых кадров! 📸\n\nС творческими пожеланиями,\nкоманда Etnika Studio",
         "date": "2025-11-07T08:23:00.864Z"
       }
-    },
-    {
-      "id": "nVD24efVkgPiA7XyYU1YaCbgn0Zq_PBrf",
-      "author": "Ника",
-      "authorPublicId": "3xmtf09b5b62924tekj1g8j3qc",
-      "authorLevel": "Знаток города 5 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/18057972/V2AdXMiZnLXLZAPYZb6YfZeRC8-1/islands-68",
-      "rating": 5,
-      "text": "Потрясающая студия в Москве! Общение с клиентами, коммуникация это просто вау! Готовы идти на уступки если ситуация того позволяет и от этого конечно впечатления только хорошие. \nЧто касается студии - очень красивая, уютная и чистая. \nФото отдали в течение трех часов, это вообще космос ! \nВсе ооочень понравилось, уверена что вернусь не раз ) ",
-      "date": "2026-11-03T03:39:55.511Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=3xmtf09b5b62924tekj1g8j3qc&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [],
-      "videos": [],
-      "businessResponse": null
     },
     {
       "id": "ZABOR6xW5KiwrSCxpUM7h6HwLuq0ji-G",
