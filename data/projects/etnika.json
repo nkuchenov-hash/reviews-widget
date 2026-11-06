@@ -8,7 +8,7 @@
     "name": "Студия автопортрета Этника",
     "rating": 5,
     "ratingsCount": 249,
-    "reviewsCount": 224
+    "reviewsCount": 225
   },
   "profile": {
     "name": "Студия автопортрета Этника",
@@ -27,7 +27,7 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-11-05T23:37:23.002161+00:00",
+  "fetchedAt": "2026-11-06T06:38:51.241466+00:00",
   "reviews": [
     {
       "id": "e798uX5NfMbqvuPnz67iuEGxT_qYLAcm",
@@ -1868,28 +1868,6 @@
       }
     },
     {
-      "id": "ckVoquNfQGtHe4FSsG639shuHx6wFY5d",
-      "author": "Валентина С.",
-      "authorPublicId": "5r1f5gufvpka9qtn8r6n25m7t0",
-      "authorLevel": "Знаток города 9 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/58107/EUApROprLmeQmzxx4Jan3ojxc-1/islands-68",
-      "rating": 5,
-      "text": "Прекрасная фотостудия! Легко и быстро получились замечательные фото в честь дня рождения! Очень уютно и комфортно, чудесная девушка-администратор все показала!",
-      "date": "2026-08-13T09:52:50.613Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=5r1f5gufvpka9qtn8r6n25m7t0&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [],
-      "videos": [],
-      "businessResponse": {
-        "text": "Валентина, благодарим вас за такой тёплый отзыв! ❤️\n\nНам очень приятно, что вы выбрали нашу студию для празднования дня рождения. Мы рады, что всё прошло легко, быстро, и фотографии получились замечательными. Особое спасибо за добрые слова о нашем администраторе — мы обязательно передадим ей вашу благодарность, она будет очень рада 😊\n\nЖдём вас снова в студии автопортрета Этника за новыми красивыми кадрами и яркими эмоциями! 📸✨\n\nС творческим теплом,\nкоманда студии автопортрета Этника",
-        "date": "2026-08-14T07:52:46.764Z"
-      }
-    },
-    {
       "id": "08OEadY9B-Ha-HhKrvQYTrZOkYMId_n",
       "author": "Юрий Тарелкин",
       "authorPublicId": "ja6x2nu4m4ra3ygf50jtry083m",
@@ -2421,6 +2399,28 @@
       "businessResponse": {
         "text": "Алесия, спасибо за такой душевный и подробный отзыв! ❤️ \n\nОсобенно приятно, что вы сознательно выбрали нас после сравнения — это большая честь и ответственность для нас.\n\nМы бесконечно рады, что смогли превзойти ваши ожидания! Создавать комфортные условия и качественные фото — именно то, к чему мы стремимся в работе. Ваши слова о простоте, удобстве и качестве — лучшая награда для нашей команды!\n\nБудем рады видеть вас снова в Etnika Studio! Возможно, в следующий раз попробуем тематическую съёмку или новые образы? 😊\n\nС творческим теплом,\nкоманда Etnika Studio\n\n",
         "date": "2025-11-25T09:01:09.692Z"
+      }
+    },
+    {
+      "id": "ckVoquNfQGtHe4FSsG639shuHx6wFY5d",
+      "author": "Валентина С.",
+      "authorPublicId": "5r1f5gufvpka9qtn8r6n25m7t0",
+      "authorLevel": "Знаток города 9 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/58107/EUApROprLmeQmzxx4Jan3ojxc-1/islands-68",
+      "rating": 5,
+      "text": "Прекрасная фотостудия! Легко и быстро получились замечательные фото в честь дня рождения! Очень уютно и комфортно, чудесная девушка-администратор все показала!",
+      "date": "2026-08-13T09:52:50.613Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=5r1f5gufvpka9qtn8r6n25m7t0&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": {
+        "text": "Валентина, благодарим вас за такой тёплый отзыв! ❤️\n\nНам очень приятно, что вы выбрали нашу студию для празднования дня рождения. Мы рады, что всё прошло легко, быстро, и фотографии получились замечательными. Особое спасибо за добрые слова о нашем администраторе — мы обязательно передадим ей вашу благодарность, она будет очень рада 😊\n\nЖдём вас снова в студии автопортрета Этника за новыми красивыми кадрами и яркими эмоциями! 📸✨\n\nС творческим теплом,\nкоманда студии автопортрета Этника",
+        "date": "2026-08-14T07:52:46.764Z"
       }
     },
     {
@@ -4455,28 +4455,6 @@
       }
     },
     {
-      "id": "rgWZB8UI9Og49iyvzJzOgKyZ1opPJY",
-      "author": "Станислав Михальчев",
-      "authorPublicId": "e2czn5983y9rqnr38q4xphqm18",
-      "authorLevel": "Знаток города 12 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/27232/kXUruOLvouBRomSTp66oPXn33KI-1/islands-68",
-      "rating": 5,
-      "text": "Замечательная студия, если хотите хорошие фото наедине, то вам сюда )",
-      "date": "2026-08-13T16:18:03.290Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=e2czn5983y9rqnr38q4xphqm18&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [],
-      "videos": [],
-      "businessResponse": {
-        "text": "Станислав, благодарим вас за отзыв! ❤️\n\nВы точно подметили главную идею нашего формата — хорошие фото наедине с собой, в уютной атмосфере и без лишних глаз. Мы очень рады, что вы это оценили 😊\n\nЖдём вас снова в студии автопортрета Этника за новыми кадрами! 📸✨\n\nС творческим теплом,\nкоманда студии автопортрета Этника",
-        "date": "2026-08-14T07:53:20.151Z"
-      }
-    },
-    {
       "id": "Jy39VrTjgtukzBcIaSMWQpJX7EjCFs",
       "author": "Максим",
       "authorPublicId": "",
@@ -4602,6 +4580,28 @@
       "businessResponse": {
         "text": "Екатерина, благодарим вас за тёплые слова! 🌸\n\nНам очень приятно, что вы оценили чистоту, уют и атмосферу нашей студии. Мы действительно стараемся поддерживать пространство в идеальном порядке, чтобы каждый гость чувствовал себя комфортно.\n\nПередадим вашу благодарность команде — для нас важно, что вы отметили приветливость персонала.\n\nЖдём вас снова в Etnika Studio за новыми красивыми кадрами! 📸\n\nС творческим теплом,\nкоманда Etnika Studio",
         "date": "2026-02-27T07:09:55.175Z"
+      }
+    },
+    {
+      "id": "rgWZB8UI9Og49iyvzJzOgKyZ1opPJY",
+      "author": "Станислав Михальчев",
+      "authorPublicId": "e2czn5983y9rqnr38q4xphqm18",
+      "authorLevel": "Знаток города 12 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/27232/kXUruOLvouBRomSTp66oPXn33KI-1/islands-68",
+      "rating": 5,
+      "text": "Замечательная студия, если хотите хорошие фото наедине, то вам сюда )",
+      "date": "2026-08-13T16:18:03.290Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=e2czn5983y9rqnr38q4xphqm18&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": {
+        "text": "Станислав, благодарим вас за отзыв! ❤️\n\nВы точно подметили главную идею нашего формата — хорошие фото наедине с собой, в уютной атмосфере и без лишних глаз. Мы очень рады, что вы это оценили 😊\n\nЖдём вас снова в студии автопортрета Этника за новыми кадрами! 📸✨\n\nС творческим теплом,\nкоманда студии автопортрета Этника",
+        "date": "2026-08-14T07:53:20.151Z"
       }
     },
     {
@@ -5256,7 +5256,7 @@
       "id": "SZsOVsyoV1RkO3VVITIr6fGqZJPgZW",
       "author": "Александр Круглов",
       "authorPublicId": "76x2gfdhjbbrdn8zj53yav7fpg",
-      "authorLevel": "Знаток города 3 уровня",
+      "authorLevel": "Знаток города 4 уровня",
       "avatar": "https://avatars.mds.yandex.net/get-yapic/25358/v57uJUpIoUUidir2hkeE3hDQzQ0-1/islands-68",
       "rating": 5,
       "text": "Очень хорошее место для свидания! Администратор очень приятная, все объяснила и всегда помогала🙏\nТочно вернемся ещё! Удобное расположение и красивая студия🌸",
