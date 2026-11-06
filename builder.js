@@ -8,6 +8,7 @@ const defaults={source:{provider:'yandex',businessId:ETNIKA_YANDEX_ID,slug:'stud
 let data=structuredClone(defaults),inst,sourceMeta=null,usingPreview=false,moderation={};
 const STATIC_MODE=location.hostname.endsWith('github.io')||location.protocol==='file:';
 const PROJECT_ID=(new URLSearchParams(location.search).get('project')||'etnika').trim();
+const USE_LOCAL_DRAFT=new URLSearchParams(location.search).get('draft')==='1';
 const SOURCE_URL='./data/projects/'+encodeURIComponent(PROJECT_ID)+'.json';
 const PROJECT_CONFIG_URL='./projects/'+encodeURIComponent(PROJECT_ID)+'.json';
 const API_BASE=String(window.REVIEWS_WIDGET_API||'').replace(/\/$/,'');
@@ -61,16 +62,28 @@ function putDesigns(v){localStorage.setItem(designsKey(),JSON.stringify(v))}
 function refreshDesignList(selectName=''){const list=$('savedDesign'),ds=getDesigns();list.innerHTML='<option value="">— Не выбран —</option>'+Object.keys(ds).sort((a,b)=>a.localeCompare(b,'ru')).map(n=>`<option value="${escapeHtml(n)}">${escapeHtml(n)}</option>`).join('');if(selectName&&ds[selectName])list.value=selectName}
 async function fetchSource(){try{const r=await fetch(`${SOURCE_URL}?v=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);const j=await r.json();if(Array.isArray(j.reviews)&&j.reviews.length){sourceMeta=j;data.reviews=applyModeration(j.reviews);usingPreview=false;return true}}catch(e){}sourceMeta=null;if(!Array.isArray(data.reviews)||!data.reviews.length){data.reviews=structuredClone(sampleReviews);usingPreview=true}return false}
 async function load(){try{
-  let saved=null,remote=null;
+  let saved=null,remote=null,draft=null;
   const raw=localStorage.getItem(storageKey())||localStorage.getItem(oldStorageKey());
-  if(raw){try{saved=JSON.parse(raw)}catch{}}
+  if(raw){try{draft=JSON.parse(raw)}catch{}}
   try{remote=await fetchProjectConfig()}catch(e){console.warn('[Reviews Widget] project config',e)}
-  if(!saved&&remote)saved=remote;
+  // The public widget uses projects/<id>.json, not browser-local design drafts.
+  // Always display the published settings by default; only open a draft on explicit request.
+  if(remote){
+    saved=(USE_LOCAL_DRAFT&&draft)?{
+      ...remote,...draft,
+      source:remote.source,
+      display:{...(remote.display||{}),...(draft.display||{})},
+      design:{...(remote.design||{}),...(draft.design||{})},
+      content:{...(remote.content||{}),...(draft.content||{})}
+    }:remote;
+  }else saved=draft;
   if(saved){
     moderation=saved.moderation||{};
     data={...structuredClone(defaults),...saved,source:{...defaults.source,...(saved.source||{})},display:{...defaults.display,...(saved.display||{})},design:{...defaults.design,...(saved.design||{})},content:{...defaults.content,...(saved.content||{})},reviews:[]};
   }else data=structuredClone(defaults);
   data.source.provider='yandex';
+  // Protect ETNIKA's verified Yandex Business ID from obsolete local settings.
+  if(PROJECT_ID==='etnika')data.source={...data.source,...(remote?.source||defaults.source)};
   const parsed=parseYandexOrgUrl(data.source.businessUrl);
   if(parsed)data.source={...data.source,...parsed,provider:'yandex'};
   const savedButton=String(data.content?.buttonUrl||'');
@@ -89,7 +102,7 @@ function collect(){
 
 function updateFontUI(){const f=$('fontPreset').value,t=$('titleFontPreset').value;$('customFontWrap').style.display=f==='custom'?'grid':'none';$('customTitleFontWrap').style.display=t==='custom'?'grid':'none'}
 function updateLayoutUI(){const l=$('layout').value,slider=l==='slider';$('sliderSettings').style.display=slider?'block':'none';$('collectionSettings').style.display=slider?'none':'block';if(!slider){$('collectionSettingsTitle').textContent=l==='grid'?'Сетка':'Список';$('initialItemsLabel').textContent=l==='grid'?'Карточек сначала':'Отзывов сначала';const d={...defaults.design,...(data.design||{})};$('initialItems').value=l==='grid'?(d.gridInitialItems||6):(d.listInitialItems||3)}}
-function fill(){const s={...defaults.source,...(data.source||{})},d={...defaults.design,...(data.design||{})},c={...defaults.content,...(data.content||{})};typeSizeKeys.forEach(k=>d[k]=Math.max(16,Number(d[k])||defaults.design[k]||16));$('displayMode').value=data.display?.mode||'custom';$('businessId').value=s.businessId;$('businessUrl').value=s.businessUrl;designKeys.forEach(k=>{if($(k))$(k).value=d[k]});$('autoplaySeconds').value=(Number(d.autoplayDelay||4500)/1000).toFixed(1).replace(/\.0$/,'');boolKeys.forEach(k=>{if($(k))$(k).checked=Boolean(d[k])});['title','subtitle','buttonText','buttonUrl'].forEach(k=>$(k).value=c[k]||'');colorKeys.forEach(k=>{const v=normalizeHex(d[k]);if(v){$(k).value=v;if($(k+'Picker'))$(k+'Picker').value=v}});const fp=presetForFamily(d.fontFamily,false),tp=presetForFamily(d.titleFontFamily,true);$('fontPreset').value=fp;$('titleFontPreset').value=tp;if(fp==='custom')$('customFontFamily').value=d.fontFamily||'';if(tp==='custom')$('customTitleFontFamily').value=d.titleFontFamily||'';$('fontCssUrl').value=d.fontCssUrl||'';updateFontUI();updateLayoutUI();sourceUI();reviewsUI()}
+function fill(){const s={...defaults.source,...(data.source||{})},d={...defaults.design,...(data.design||{})},c={...defaults.content,...(data.content||{})};typeSizeKeys.forEach(k=>d[k]=Math.max(16,Number(d[k])||defaults.design[k]||16));$('displayMode').value=data.display?.mode||'custom';$('businessId').value=s.businessId;$('businessUrl').value=s.businessUrl;const info=$('projectInfo');if(info)info.textContent=`Проект: ${PROJECT_ID} · Business ID Яндекс: ${s.businessId||'не указан'}`;designKeys.forEach(k=>{if($(k))$(k).value=d[k]});$('autoplaySeconds').value=(Number(d.autoplayDelay||4500)/1000).toFixed(1).replace(/\.0$/,'');boolKeys.forEach(k=>{if($(k))$(k).checked=Boolean(d[k])});['title','subtitle','buttonText','buttonUrl'].forEach(k=>$(k).value=c[k]||'');colorKeys.forEach(k=>{const v=normalizeHex(d[k]);if(v){$(k).value=v;if($(k+'Picker'))$(k+'Picker').value=v}});const fp=presetForFamily(d.fontFamily,false),tp=presetForFamily(d.titleFontFamily,true);$('fontPreset').value=fp;$('titleFontPreset').value=tp;if(fp==='custom')$('customFontFamily').value=d.fontFamily||'';if(tp==='custom')$('customTitleFontFamily').value=d.titleFontFamily||'';$('fontCssUrl').value=d.fontCssUrl||'';updateFontUI();updateLayoutUI();sourceUI();reviewsUI()}
 function sourceUI(){const native=$('displayMode').value==='native';$('customModeInfo').style.display=native?'none':'block';$('nativeModeInfo').style.display=native?'block':'none';$('designLimit').style.display=native?'block':'none';$('yandexHeightField').style.display=native?'grid':'none';document.querySelectorAll('.customOnly').forEach(el=>el.classList.toggle('disabled',native));$('reviewsDisabled').style.display=native?'block':'none';$('reviewList').style.display=native?'none':'grid';$('modeBadge').textContent=native?'Яндекс Карты · официальный iframe':'Яндекс Карты · наш дизайн';$('modeBadge').classList.toggle('limited',native||!sourceMeta);$('reviewsSourceLabel').innerHTML=sourceMeta?`<b>Источник: Яндекс Карты.</b> Загружено ${sourceMeta.reviews.length} отзывов${sourceMeta.fetchedAt?`, обновлено ${escapeHtml(new Date(sourceMeta.fetchedAt).toLocaleString('ru-RU'))}`:''}.`:'<b>Источник: Яндекс Карты.</b> Реальные данные ещё не синхронизированы.'}
 function reviewsUI(){const list=$('reviewList'),rs=data.reviews||[];list.innerHTML=rs.length?rs.map((r,i)=>`<div class="review ${r.hidden?'hidden':''} ${r.pinned?'pinned':''}"><div class="review-head"><div><div class="review-author">${escapeHtml(r.author||'Клиент')} · ${Number(r.rating||0)}★</div><div class="review-meta">${escapeHtml(r.date||'')} · Яндекс${r.photos?.length?` · фото ${r.photos.length}`:''}${r.videos?.length?` · видео ${r.videos.length}`:''}</div></div><b>${r.pinned?'PIN':''}</b></div><div class="review-text">${escapeHtml(r.text||'')}</div>${usingPreview?'':'<div class="review-actions"><button class="btn sm" onclick="togglePin('+i+')">'+(r.pinned?'Открепить':'Закрепить')+'</button><button class="btn sm" onclick="toggleHide('+i+')">'+(r.hidden?'Показать':'Скрыть')+'</button></div>'}</div>`).join(''):'<div class="muted">Отзывы не загружены.</div>'}
 window.togglePin=i=>{if(usingPreview)return;data.reviews[i].pinned=!data.reviews[i].pinned;if(data.reviews[i].pinned)data.reviews[i].pinOrder=Math.max(0,...data.reviews.filter(x=>x.pinned).map(x=>Number(x.pinOrder)||0))+1;save(false);reviewsUI();render()};window.toggleHide=i=>{if(usingPreview)return;data.reviews[i].hidden=!data.reviews[i].hidden;save(false);reviewsUI();render()};
@@ -107,7 +120,7 @@ async function save(show=true){
       sourceUI();return true;
     }catch(e){if(show)setStatus(e.message,'err');sourceUI();return false}
   }
-  if(show)setStatus('Настройки сохранены локально. Для облачного сохранения нужно подключить backend.','ok');sourceUI();return true
+  if(show)setStatus('Сохранено в локальный черновик. Для отображения на сайте требуется публикация настроек проекта на GitHub.','ok');sourceUI();return true
 }
 function saveNamedDesign(){collect();const name=$('designName').value.trim();if(!name){setStatus('Введите название дизайна перед сохранением.','err');return}const ds=getDesigns();ds[name]=structuredClone(data.design);putDesigns(ds);refreshDesignList(name);setStatus(`Дизайн «${name}» сохранён.`,'ok')}
 function loadNamedDesign(){const name=$('savedDesign').value;if(!name)return;const ds=getDesigns();if(!ds[name])return;data.design={...defaults.design,...structuredClone(ds[name])};$('designName').value=name;fill();render();setStatus(`Дизайн «${name}» загружен.`,'ok')}
@@ -123,6 +136,8 @@ function setPreview(mode){document.querySelectorAll('.view-btn').forEach(b=>b.cl
 
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.pane').forEach(p=>p.classList.toggle('on',p.dataset.pane===b.dataset.tab))});
 document.querySelectorAll('.view-btn').forEach(b=>b.onclick=()=>setPreview(b.dataset.view));
+const draftSwitch=$('draftSwitch');
+if(draftSwitch){const next=new URL(location.href);if(USE_LOCAL_DRAFT){next.searchParams.delete('draft');draftSwitch.textContent='Опубликованные настройки'}else{next.searchParams.set('draft','1');draftSwitch.textContent='Открыть локальный черновик'}draftSwitch.href=next.toString()}
 $('preset').onchange=()=>applyPreset($('preset').value);$('displayMode').onchange=()=>{sourceUI();render()};$('save').onclick=()=>save();$('saveDesign').onclick=saveNamedDesign;$('savedDesign').onchange=loadNamedDesign;$('deleteDesign').onclick=deleteNamedDesign;$('sync').onclick=sync;$('reload').onclick=load;$('embed').onclick=()=>{const el=$('code');el.textContent=embedCode();el.classList.toggle('on')};
 ['fontPreset','titleFontPreset'].forEach(k=>$(k).addEventListener('change',()=>{updateFontUI();render()}));
 $('layout').addEventListener('change',()=>{updateLayoutUI();render()});$('businessUrl').addEventListener('change',()=>{const p=parseYandexOrgUrl($('businessUrl').value);if(p){$('businessId').value=p.businessId;data.source={provider:'yandex',...p};data.content.buttonUrl=reviewFormUrl(p.businessUrl,p.businessId);$('buttonUrl').value=data.content.buttonUrl;setStatus('Организация Яндекс определена. Нажмите «Сохранить».','ok')}else setStatus('Не удалось определить организацию. Вставьте полную ссылку вида yandex.ru/maps/org/.../123456/...','err')});$('initialItems').addEventListener('input',render);['customFontFamily','customTitleFontFamily','fontCssUrl'].forEach(k=>$(k).addEventListener('input',render));
