@@ -58,7 +58,12 @@
     "ratingSize": 16,
     "buttonSize": 16,
     "actionSize": 16,
-    "responseSize": 16
+    "responseSize": 16,
+    "showReviewButton": true,
+    "showControls": true,
+    "showRating": true,
+    "sort": "newest",
+    "loop": true
   },
   "content": {
     "title": "Отзывы наших клиентов",
@@ -67,5 +72,8 @@
     "buttonUrl": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?add-review=true",
     "showHeader": true
   },
-  "moderation": {}
+  "moderation": {},
+  "display": {
+    "mode": "custom"
+  }
 }
