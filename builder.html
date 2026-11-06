@@ -23,6 +23,7 @@
         <h3>1. Источник отзывов</h3>
         <div class="field"><label>Источник данных</label><input value="Яндекс Карты" disabled></div>
         <div class="field"><label>Business ID Яндекс</label><input id="businessId"></div>
+        <div class="notice" id="projectInfo">Данные проекта загружаются из опубликованной конфигурации.</div>
         <div class="field"><label>Ссылка на организацию</label><input id="businessUrl"></div>
         <div class="notice"><b>Источник — реальная карточка Яндекс Карт.</b> Рейтинг, оценки, отзывы и дополнительные данные синхронизируются автоматически.</div>
       </div>
@@ -32,7 +33,7 @@
         <div id="customModeInfo" class="notice"><b>Наш дизайн:</b> данные берутся из Яндекса, а карточки полностью рисует наш код.</div>
         <div id="nativeModeInfo" class="notice bad" style="display:none"><b>Официальный iframe:</b> обновляется Яндексом, но внутренний дизайн изменить нельзя.</div>
       </div>
-      <div class="actions"><button class="btn primary" id="save">Сохранить настройки</button><button class="btn" id="sync">Проверить синхронизацию</button></div>
+      <div class="actions"><button class="btn primary" id="save">Сохранить черновик</button><button class="btn" id="sync">Проверить синхронизацию</button><a class="btn" id="draftSwitch" href="?project=etnika&amp;draft=1">Открыть локальный черновик</a></div>
       <div class="status" id="status">Готово.</div>
       <div class="group"><h3>Вставка</h3><button class="btn" id="embed">Показать код</button><div class="code" id="code"></div></div>
     </section>
