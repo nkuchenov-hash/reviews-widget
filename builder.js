@@ -138,7 +138,19 @@ document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelect
 document.querySelectorAll('.view-btn').forEach(b=>b.onclick=()=>setPreview(b.dataset.view));
 const draftSwitch=$('draftSwitch');
 if(draftSwitch){const next=new URL(location.href);if(USE_LOCAL_DRAFT){next.searchParams.delete('draft');draftSwitch.textContent='Опубликованные настройки'}else{next.searchParams.set('draft','1');draftSwitch.textContent='Открыть локальный черновик'}draftSwitch.href=next.toString()}
-$('preset').onchange=()=>applyPreset($('preset').value);$('displayMode').onchange=()=>{sourceUI();render()};$('save').onclick=()=>save();$('saveDesign').onclick=saveNamedDesign;$('savedDesign').onchange=loadNamedDesign;$('deleteDesign').onclick=deleteNamedDesign;$('sync').onclick=sync;$('reload').onclick=load;$('embed').onclick=()=>{const el=$('code');el.textContent=embedCode();el.classList.toggle('on')};
+$('preset').onchange=()=>applyPreset($('preset').value);$('displayMode').onchange=()=>{sourceUI();render()};$('save').onclick=()=>save();$('saveDesign').onclick=saveNamedDesign;$('savedDesign').onchange=loadNamedDesign;$('deleteDesign').onclick=deleteNamedDesign;$('sync').onclick=sync;$('reload').onclick=load;$('embed').onclick=async()=>{
+  const el=$('code');
+  if(el.classList.contains('on')){el.classList.remove('on');return}
+  let code='';
+  if(PROJECT_ID==='etnika'){
+    try{
+      const response=await fetch('./integrations/etnika-tilda.html?v='+Date.now(),{cache:'no-store'});
+      if(response.ok)code=await response.text();
+    }catch(e){console.warn('[Reviews Widget] Tilda snippet',e)}
+  }
+  el.textContent=code||embedCode();
+  el.classList.add('on');
+};
 ['fontPreset','titleFontPreset'].forEach(k=>$(k).addEventListener('change',()=>{updateFontUI();render()}));
 $('layout').addEventListener('change',()=>{updateLayoutUI();render()});$('businessUrl').addEventListener('change',()=>{const p=parseYandexOrgUrl($('businessUrl').value);if(p){$('businessId').value=p.businessId;data.source={provider:'yandex',...p};data.content.buttonUrl=reviewFormUrl(p.businessUrl,p.businessId);$('buttonUrl').value=data.content.buttonUrl;setStatus('Организация Яндекс определена. Нажмите «Сохранить».','ok')}else setStatus('Не удалось определить организацию. Вставьте полную ссылку вида yandex.ru/maps/org/.../123456/...','err')});$('initialItems').addEventListener('input',render);['customFontFamily','customTitleFontFamily','fontCssUrl'].forEach(k=>$(k).addEventListener('input',render));
 colorKeys.forEach(k=>{const t=$(k),p=$(k+'Picker');t?.addEventListener('input',()=>{const v=normalizeHex(t.value);if(v&&p)p.value=v;render()});p?.addEventListener('input',()=>{t.value=p.value.toUpperCase();render()})});
