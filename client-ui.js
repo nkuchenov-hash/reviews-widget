@@ -15,16 +15,11 @@ function addProjectBadge(name){const sub=q('.sub');if(!sub||q('.client-project-b
 function setControl(id,value){const el=document.getElementById(id);if(!el||value==null)return;if(el.type==='checkbox')el.checked=Boolean(value);else el.value=value}
 async function loadProject(){
  try{
-   const r=await fetch(`./projects/${encodeURIComponent(PROJECT_ID)}.json?v=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw new Error('Project not found');
-   const cfg=await r.json();addProjectBadge(cfg.name||PROJECT_ID);
-   if(cfg.source){setControl('businessId',cfg.source.businessId);setControl('businessUrl',cfg.source.businessUrl)}
-   const d=cfg.design||{};
-   const simple=['layout','columns','tabletColumns','mobileColumns','gap','radius','maxWidth','titleSize','mobileTitleSize','bodySize','bodyWeight','titleWeight','strongWeight','cardPadding','buttonRadius','borderWidth','minRating','maxTextLines','loadMoreStep','transitionMs','accent','background','cardBackground','textColor','borderColor','starColor'];
-   simple.forEach(k=>setControl(k,d[k]));
-   ['showAvatar','showDate','showSource','showSummary','showMedia','showBusinessResponse','showReactions','autoplay'].forEach(k=>setControl(k,d[k]));
-   if(d.autoplayDelay!=null)setControl('autoplaySeconds',Number(d.autoplayDelay)/1000);
-   const c=cfg.content||{};['title','subtitle','buttonText','buttonUrl'].forEach(k=>setControl(k,c[k]));
-   const target=document.getElementById('businessUrl')||document.getElementById('layout');if(target)target.dispatchEvent(new Event('input',{bubbles:true}));
+   const r=await fetch(`./projects/${encodeURIComponent(PROJECT_ID)}.json?v=${Date.now()}`,{cache:'no-store'});
+   if(!r.ok)throw new Error('Project not found');
+   const cfg=await r.json();
+   addProjectBadge(cfg.name||PROJECT_ID);
+   // The editor's own load() is the only code allowed to fill source and design controls.
  }catch(e){addProjectBadge(PROJECT_ID)}
 }
 function apply(){
@@ -34,12 +29,12 @@ function apply(){
  const tabs=qa('.tab'); if(tabs[0])tabs[0].textContent='Подключение'; if(tabs[1])tabs[1].textContent='Отзывы'; if(tabs[2])tabs[2].textContent='Дизайн';
  const source=document.querySelector('[data-pane="source"]');
  if(source){const hs=source.querySelectorAll('.group h3'); if(hs[0])hs[0].textContent='Источник отзывов'; if(hs[1])hs[1].textContent='Отображение'; if(hs[2])hs[2].textContent='Установка на сайт'}
- hide(closestField('businessId'));
+ relabel('businessId','Business ID Яндекс Карт');
  const providerField=source&&source.querySelector('input[disabled]')?.closest('.field'); hide(providerField);
  relabel('businessUrl','Ссылка на карточку в Яндекс Картах');
  relabel('displayMode','Вид виджета');
  const dm=document.getElementById('displayMode'); if(dm&&dm.options.length>1){dm.options[0].text='Фирменный дизайн';dm.options[1].text='Официальный виджет Яндекса'}
- text(document.getElementById('save'),'Сохранить изменения');
+ text(document.getElementById('save'),'Сохранить черновик');
  text(document.getElementById('sync'),'Проверить данные');
  text(document.getElementById('embed'),'Получить код для сайта');
  const custom=document.getElementById('customModeInfo'); if(custom)custom.innerHTML='<b>Фирменный дизайн:</b> отзывы остаются данными Яндекса, а внешний вид полностью настраивается под ваш сайт.';
@@ -57,8 +52,7 @@ function apply(){
  text(document.getElementById('reload'),'Обновить');
  addInstallHint();
  const badge=document.getElementById('modeBadge'); if(badge&&badge.textContent.includes('наш дизайн'))badge.textContent='Яндекс Карты · фирменный дизайн';
- const embed=document.getElementById('embed');if(embed)embed.addEventListener('click',()=>setTimeout(()=>{const code=document.getElementById('code');if(code){code.textContent=stableEmbed();code.classList.add('on')}},0));
- const save=document.getElementById('save');if(save)save.addEventListener('click',()=>setTimeout(()=>{const s=document.getElementById('status');if(s){s.textContent='Изменения сохранены для предпросмотра этого проекта. Публикация изменений на сайте будет подключена через онлайн-сохранение проекта.';s.className='status ok'}},0));
+ // Use the builder's canonical published config and installation code; do not overwrite them.
  loadProject();
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(apply,0));else setTimeout(apply,0);
