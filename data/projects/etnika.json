@@ -8,7 +8,7 @@
     "name": "Студия автопортрета Этника",
     "rating": 5,
     "ratingsCount": 250,
-    "reviewsCount": 225
+    "reviewsCount": 227
   },
   "profile": {
     "name": "Студия автопортрета Этника",
@@ -27,7 +27,7 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-11-09T06:21:25.887073+00:00",
+  "fetchedAt": "2026-11-09T19:46:35.338005+00:00",
   "reviews": [
     {
       "id": "e798uX5NfMbqvuPnz67iuEGxT_qYLAcm",
@@ -2643,41 +2643,6 @@
       }
     },
     {
-      "id": "JiQBLs8keHwFANmUdR5Tuiph7c-znXc",
-      "author": "Валерия",
-      "authorPublicId": "2z9228g9f3rb9y3r2hwb54jftr",
-      "authorLevel": "Знаток города 5 уровня",
-      "avatar": "https://avatars.mds.yandex.net/get-yapic/6218514/xTSL2Df8Lb1QDje8KziUHUPws-1/islands-68",
-      "rating": 5,
-      "text": "Очень понравилось! Были с подругами, отмечали девичник — эмоции только положительные. Процесс съёмки оказался простым и увлекательным, а результат превзошёл ожидания. Отличная идея для необычного праздника!",
-      "date": "2026-04-11T08:14:46.592Z",
-      "createdDate": "",
-      "edited": false,
-      "source": "yandex",
-      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=2z9228g9f3rb9y3r2hwb54jftr&utm_source=review",
-      "likes": 0,
-      "dislikes": 0,
-      "photos": [
-        {
-          "type": "photo",
-          "url": "https://avatars.mds.yandex.net/get-altay/17681761/2a0000019d7b9b9c4d40498bc62aa8f4305d/M"
-        },
-        {
-          "type": "photo",
-          "url": "https://avatars.mds.yandex.net/get-altay/18150755/2a0000019d7b9ba1ed50bc50314dd19748fc/M"
-        },
-        {
-          "type": "photo",
-          "url": "https://avatars.mds.yandex.net/get-altay/19673716/2a0000019d7b9b9469e23e27037c2c0bd43f/M"
-        }
-      ],
-      "videos": [],
-      "businessResponse": {
-        "text": "Валерия, благодарим вас за такой яркий отзыв! ❤️\n\nКак здорово, что вы выбрали Etnika Studio для празднования девичника — это действительно отличная идея для необычного и запоминающегося праздника! Нам очень приятно, что процесс съёмки оказался простым и увлекательным, а результат превзошёл ожидания 😊📸\n\nРады, что эмоции остались только положительные. Ждём вас и ваших подруг снова — может, на следующий совместный праздник или просто за красивыми кадрами!\n\nС творческим теплом,\nкоманда Etnika Studio",
-        "date": "2026-04-13T08:50:06.517Z"
-      }
-    },
-    {
       "id": "-_NcLdb50ckawN8r58NJ8hqK0UPveB5m",
       "author": "катя папанова",
       "authorPublicId": "u01rcgxk0tqx8xxabqbu1hykt4",
@@ -3840,6 +3805,28 @@
       "businessResponse": {
         "text": "Ульяна, благодарим вас за такой тёплый и искренний отзыв! 🥰\n\nНам очень приятно, что вы оценили интерьер, реквизит и сам процесс съёмки. Мы стараемся создавать атмосферу, в которой хочется творить и возвращаться снова. Особенно рады, что фотографии вас порадовали!\n\nОбязательно ждём вас в Etnika Studio на новые красивые кадры и вдохновение! 📸✨\n\nС творческим теплом,\nкоманда Etnika Studio",
         "date": "2026-04-20T14:39:29.234Z"
+      }
+    },
+    {
+      "id": "m87887RNsEfG0GKpSYJDg0LYFZWzmn",
+      "author": "Диана Ермолаева",
+      "authorPublicId": "b5pxr7c785dfptqu9d3rg6bjr4",
+      "authorLevel": "Знаток города 3 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/48449/g8VJUYAmXY7W88ZBC5hrTMhDo-1/islands-68",
+      "rating": 5,
+      "text": "студия супер, персонал очень вежливый, оборудование на высшем уровне.\nатмосфера очень приятная, можно включить свою музыку ",
+      "date": "2026-05-11T16:21:09.545Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=b5pxr7c785dfptqu9d3rg6bjr4&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": {
+        "text": "Диана, благодарим вас за отзыв! ❤️\n\nОчень рады, что вы оценили высокий уровень оборудования, приятную атмосферу и возможность включить свою музыку. Передадим ваши слова нашему вежливому персоналу — это лучшая награда 😊\n\nЖдём вас снова в Etnika Studio за красивыми кадрами! 📸✨\n\nС творческим теплом,\nкоманда Etnika Studio",
+        "date": "2026-05-12T07:54:24.304Z"
       }
     },
     {
@@ -5270,6 +5257,44 @@
         "text": "Анжела, благодарим за такой тёплый отзыв! ❤️\n Нам очень приятно, что вы оценили атмосферу нашей студии и работу команды.\n\nМы стараемся создавать пространство, где каждый чувствует себя комфортно и может раскрыться перед камерой. Ваши слова — лучшая награда для нас!\n\nЖдём вас снова в Etnika Studio — возможно, попробуем новые образы или тематическую съёмку? Будем рады создать для вас ещё больше красивых кадров! 📸\n\nС творческими пожеланиями,\nкоманда Etnika Studio",
         "date": "2025-11-07T08:23:00.864Z"
       }
+    },
+    {
+      "id": "FbWxZk8qLQ3Os78wGzBnSDbXhNZzDYY",
+      "author": "Василиса Т.",
+      "authorPublicId": "zdy43zxfmkfng2fg4yq91hpxbg",
+      "authorLevel": "Знаток города 5 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/16491550/9doDljNCDGlLJfY4cpH40xNs-1/islands-68",
+      "rating": 5,
+      "text": "Очень классная студия с очень приятными работниками!) Процесс съёмки ощущается невероятно комфортно. Перед началом вам всё расскажут и покажут, так что идите смело и ни за что не переживайте:)\nЕсть разный реквизит для ваших фотографий.",
+      "date": "2026-11-09T10:37:26.224Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=zdy43zxfmkfng2fg4yq91hpxbg&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": null
+    },
+    {
+      "id": "CMiojuTSz4wgN-2jzsJOzHOLrJccyA_k",
+      "author": "Дарья М.",
+      "authorPublicId": "wr4wn5ja8xrh2nw5fk09x6a5ac",
+      "authorLevel": "Знаток города 3 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/33202/EYSZ3PHtKvFLB2ZrRYtqwTqQ-1/islands-68",
+      "rating": 5,
+      "text": "Своей первой студией Автопортрета мы выбрали ЭТНИКУ и нисколько не прогадали🤩 Очень уютное, атмосферное пространство, в котором можно воплощать любые идеи в жизнь, а самое главное фиксировать их памятными кадрами, а в помощь Вам будет персонал,  который подробно расскажет, как это сделать! Всем рекомендую, вернемся еще  и не раз❤️",
+      "date": "2026-11-09T10:38:13.216Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=wr4wn5ja8xrh2nw5fk09x6a5ac&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": null
     },
     {
       "id": "ZABOR6xW5KiwrSCxpUM7h6HwLuq0ji-G",
