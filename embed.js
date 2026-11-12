@@ -10,7 +10,7 @@ function loadWidget(){
   if(widgetPromise)return widgetPromise;
   widgetPromise=new Promise((resolve,reject)=>{
     const s=document.createElement('script');
-    s.src=new URL('widget.js',base).href+'?v=20260925-projects';
+    s.src=new URL('widget.js',base).href+'?v=20261112-carousel-stability';
     s.async=true;
     s.onload=()=>window.UniversalReviews?resolve(window.UniversalReviews):reject(new Error('Widget API not found'));
     s.onerror=()=>reject(new Error('Widget script failed to load'));
