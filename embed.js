@@ -23,7 +23,8 @@ async function getProject(id){
   if(projectCache.has(id))return projectCache.get(id);
   const p=(async()=>{
     const cfgUrl=new URL('projects/'+encodeURIComponent(id)+'.json',base);
-    const cfgRes=await fetch(cfgUrl,{cache:'no-cache'});
+    cfgUrl.searchParams.set('v','20261113-reading-ux-height');
+    const cfgRes=await fetch(cfgUrl,{cache:'no-store'});
     if(!cfgRes.ok)throw new Error('Project not found: '+id);
     const cfg=await cfgRes.json();
     const reviewsUrl=new URL(cfg.reviewsUrl||('data/projects/'+encodeURIComponent(id)+'.json'),base);
