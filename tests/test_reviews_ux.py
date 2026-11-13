@@ -37,6 +37,15 @@ def run():
         assert page.locator(".urw-card").first.inner_text().find("Five") >= 0
         assert "LowRating" not in page.locator(".urw").inner_text()
         assert not errors, errors
+        # In ordinary motion mode the carousel decelerates gently at the end.
+        page.emulate_media(reduced_motion="no-preference")
+        motion = page.locator(".urw-track").evaluate("""el => {
+          const style = getComputedStyle(el);
+          return { timing:style.transitionTimingFunction, duration:style.transitionDuration };
+        }""")
+        assert "cubic-bezier(0.22, 1, 0.36, 1)" in motion["timing"], motion
+        assert "0.56s" in motion["duration"], motion
+        page.emulate_media(reduced_motion="reduce")
 
         # A fixed baseline equal to the collapsed carousel's natural height:
         # normal autoplay and manual navigation cannot change section height.
