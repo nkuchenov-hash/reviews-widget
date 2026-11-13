@@ -28,7 +28,7 @@ def run():
               layout:'slider',columns:1,tabletColumns:1,mobileColumns:1,
               minRating:4,maxTextLines:3,showBusinessResponse:true,
               showControls:true,showReactions:false,showMedia:false,
-              showSummary:false,autoplay:true,autoplayDelay:1300,transitionMs:100
+              showSummary:false,autoplay:true,autoplayDelay:1300,transitionMs:560
             },content:{showHeader:false}
           });
         }""")
