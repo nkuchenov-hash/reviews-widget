@@ -28,7 +28,7 @@ def run():
               layout:'slider',columns:1,tabletColumns:1,mobileColumns:1,
               minRating:4,maxTextLines:3,showBusinessResponse:true,
               showControls:true,showReactions:false,showMedia:false,
-              showSummary:false,autoplay:true,autoplayDelay:1300,transitionMs:100
+              showSummary:false,autoplay:true,autoplayDelay:1300,transitionMs:560
             },content:{showHeader:false}
           });
         }""")
@@ -37,12 +37,27 @@ def run():
         assert page.locator(".urw-card").first.inner_text().find("Five") >= 0
         assert "LowRating" not in page.locator(".urw").inner_text()
         assert not errors, errors
+        # In ordinary motion mode the carousel decelerates gently at the end.
+        page.emulate_media(reduced_motion="no-preference")
+        motion = page.locator(".urw-track").evaluate("""el => {
+          const style = getComputedStyle(el);
+          return { timing:style.transitionTimingFunction, duration:style.transitionDuration };
+        }""")
+        assert "cubic-bezier(0.22, 1, 0.36, 1)" in motion["timing"], motion
+        assert "0.56s" in motion["duration"], motion
+        page.emulate_media(reduced_motion="reduce")
 
-        # The viewport MUST resize to the current card, not the tallest card in
-        # the entire off-screen track. The widget must automatically advance.
+        # A fixed baseline equal to the collapsed carousel's natural height:
+        # normal autoplay and manual navigation cannot change section height.
         initial = page.locator(".urw-viewport").evaluate("(el) => el.offsetHeight")
         assert initial > 80
+        for index in (1, 2, 0):
+            page.evaluate("(n) => window.reviewInstance.go(n)", index)
+            stable = page.locator(".urw-viewport").evaluate("(e) => e.offsetHeight")
+            assert abs(stable - initial) <= 2, f"normal carousel jumps: {stable} vs {initial}"
         page.wait_for_function("() => window.reviewInstance.i > 0", timeout=4500)
+        autoplay_height = page.locator(".urw-viewport").evaluate("(e) => e.offsetHeight")
+        assert abs(autoplay_height - initial) <= 2, "autoplay changed baseline height"
         page.evaluate("() => {window.reviewInstance.go(0);window.reviewInstance.start()}")
         page.mouse.move(400, 230)
         page.wait_for_timeout(1600)
@@ -56,6 +71,8 @@ def run():
         assert page.locator(".urw-viewport").evaluate("(e) => e.offsetHeight") > initial + 100
         page.locator(".urw-more").first.click()
         page.mouse.move(1120, 730)
+        restored = page.locator(".urw-viewport").evaluate("(e) => e.offsetHeight")
+        assert abs(restored-initial) <= 2, f"closed review did not restore baseline: {restored}"
 
         # Organization answer is more expansive than the original review.
         page.locator(".urw-response summary").first.click()
@@ -67,19 +84,21 @@ def run():
         assert page.evaluate("() => window.reviewInstance.i") == 0, "open response pauses autoplay"
 
         # Manual arrow overrides the pause, collapses the abandoned answer and
-        # reduces the viewport height to the card that is ACTUALLY visible.
+        # restores the fixed baseline rather than an arbitrary shorter height.
         page.locator("[data-next]").click()
         page.wait_for_timeout(150)
         assert page.evaluate("() => window.reviewInstance.i") == 1
         assert not page.locator(".urw-response").first.evaluate("(e) => e.open")
         next_height = page.locator(".urw-viewport").evaluate("(e) => e.offsetHeight")
-        assert next_height < expanded - 120, f"old response height leaked: {next_height}, {expanded}"
+        assert abs(next_height-initial) <= 2, f"old response height leaked: {next_height}, base={initial}, expanded={expanded}"
         page.mouse.move(1120, 730)
         page.wait_for_function("() => window.reviewInstance.i === 2", timeout=4500)
+        after_autoplay = page.locator(".urw-viewport").evaluate("(e) => e.offsetHeight")
+        assert abs(after_autoplay-initial) <= 2, "height changed after autoplay resumed"
         assert not errors, errors
         page.evaluate("() => window.reviewInstance.destroy()")
         browser.close()
-        print("PASS: rating filter, hover, reading pause, manual nav, dynamic viewport shrink, resume")
+        print("PASS: 4-star filter, stable carousel baseline, hover pause, expansion, restore, resume")
 
 
 if __name__ == "__main__":
