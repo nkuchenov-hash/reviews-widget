@@ -23,7 +23,7 @@
     "titleSize": 48,
     "mobileTitleSize": 34,
     "bodySize": 16,
-    "bodyWeight": 300,
+    "bodyWeight": 100,
     "titleWeight": 400,
     "strongWeight": 400,
     "cardPadding": 20,
