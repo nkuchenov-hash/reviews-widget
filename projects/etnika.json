@@ -43,7 +43,7 @@
     "loadMoreStep": 6,
     "autoplay": true,
     "autoplayDelay": 4500,
-    "transitionMs": 320,
+    "transitionMs": 560,
     "showAvatar": true,
     "showDate": true,
     "showSource": true,
