@@ -1,0 +1,32 @@
+name: Reviews widget reading UX
+
+on:
+  push:
+    paths:
+      - 'widget.js'
+      - 'projects/etnika.json'
+      - 'tests/test_reviews_ux.py'
+      - '.github/workflows/reviews-ux.yml'
+  pull_request:
+    paths:
+      - 'widget.js'
+      - 'projects/etnika.json'
+      - 'tests/test_reviews_ux.py'
+      - '.github/workflows/reviews-ux.yml'
+  workflow_dispatch:
+
+jobs:
+  chromium-reviews-ux:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser tools
+        run: |
+          python -m pip install playwright==1.56.0
+          python -m playwright install chromium --with-deps
+      - name: Test review carousel in Chromium
+        run: python tests/test_reviews_ux.py

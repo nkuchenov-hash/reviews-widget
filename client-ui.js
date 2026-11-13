@@ -34,7 +34,7 @@ function apply(){
  relabel('businessUrl','Ссылка на карточку в Яндекс Картах');
  relabel('displayMode','Вид виджета');
  const dm=document.getElementById('displayMode'); if(dm&&dm.options.length>1){dm.options[0].text='Фирменный дизайн';dm.options[1].text='Официальный виджет Яндекса'}
- text(document.getElementById('save'),'Сохранить черновик');
+ text(document.getElementById('save'),'Сохранить локальный черновик');
  text(document.getElementById('sync'),'Проверить данные');
  text(document.getElementById('embed'),'Получить код для сайта');
  const custom=document.getElementById('customModeInfo'); if(custom)custom.innerHTML='<b>Фирменный дизайн:</b> отзывы остаются данными Яндекса, а внешний вид полностью настраивается под ваш сайт.';

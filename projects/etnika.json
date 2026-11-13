@@ -36,7 +36,7 @@
     "mutedColor": "#6F6F6F",
     "borderColor": "#D8D2CF",
     "starColor": "#981018",
-    "minRating": 1,
+    "minRating": 4,
     "maxTextLines": 6,
     "gridInitialItems": 6,
     "listInitialItems": 3,

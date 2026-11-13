@@ -120,7 +120,7 @@ async function save(show=true){
       sourceUI();return true;
     }catch(e){if(show)setStatus(e.message,'err');sourceUI();return false}
   }
-  if(show)setStatus('Сохранено в локальный черновик. Для отображения на сайте требуется публикация настроек проекта на GitHub.','ok');sourceUI();return true
+  if(show)setStatus('Черновик сохранён только в этом браузере. На опубликованном сайте настройки НЕ изменились. Для публикации требуется обновить конфигурацию проекта на GitHub.','err');sourceUI();return true
 }
 function saveNamedDesign(){collect();const name=$('designName').value.trim();if(!name){setStatus('Введите название дизайна перед сохранением.','err');return}const ds=getDesigns();ds[name]=structuredClone(data.design);putDesigns(ds);refreshDesignList(name);setStatus(`Дизайн «${name}» сохранён.`,'ok')}
 function loadNamedDesign(){const name=$('savedDesign').value;if(!name)return;const ds=getDesigns();if(!ds[name])return;data.design={...defaults.design,...structuredClone(ds[name])};$('designName').value=name;fill();render();setStatus(`Дизайн «${name}» загружен.`,'ok')}

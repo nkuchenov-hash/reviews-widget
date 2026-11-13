@@ -33,7 +33,8 @@
         <div id="customModeInfo" class="notice"><b>Наш дизайн:</b> данные берутся из Яндекса, а карточки полностью рисует наш код.</div>
         <div id="nativeModeInfo" class="notice bad" style="display:none"><b>Официальный iframe:</b> обновляется Яндексом, но внутренний дизайн изменить нельзя.</div>
       </div>
-      <div class="actions"><button class="btn primary" id="save">Сохранить черновик</button><button class="btn" id="sync">Проверить синхронизацию</button><a class="btn" id="draftSwitch" href="?project=etnika&amp;draft=1">Открыть локальный черновик</a></div>
+      <div class="actions"><button class="btn primary" id="save">Сохранить локальный черновик</button><button class="btn" id="sync">Проверить синхронизацию</button><a class="btn" id="draftSwitch" href="?project=etnika&amp;draft=1">Открыть локальный черновик</a></div>
+      <div class="notice bad" id="publicationHint"><b>Важно:</b> этот редактор на GitHub Pages не публикует настройки на сайте. «Сохранить локальный черновик» меняет только текущий браузер. <a href="https://github.com/nkuchenov-hash/reviews-widget/edit/main/projects/etnika.json" target="_blank" rel="noopener">Опубликованная конфигурация ETNIKA</a>.</div>
       <div class="status" id="status">Готово.</div>
       <div class="group"><h3>Вставка</h3><button class="btn" id="embed">Показать код</button><div class="code" id="code"></div></div>
     </section>
@@ -85,8 +86,8 @@
   <main class="main"><div class="top"><div><h1>Предпросмотр</h1><div id="modeBadge" class="mode-badge">Яндекс Карты · наш дизайн</div></div><div class="preview-switcher"><button class="view-btn on" data-view="desktop">Desktop</button><button class="view-btn" data-view="tablet">Tablet</button><button class="view-btn" data-view="mobile">Mobile</button><button class="btn" id="reload">Обновить</button></div></div><div class="preview"><div class="preview-frame" id="previewFrame"><div id="preview"></div></div></div></main>
 </div>
 <script src="api-config.js?v=20260925"></script>
-<script src="widget.js?v=20261106-etnika-r2"></script>
-<script src="builder.js?v=20261106-etnika-r2"></script>
-<script src="client-ui.js?v=20261106-etnika-r2"></script>
+<script src="widget.js?v=20261113-reading-ux-height"></script>
+<script src="builder.js?v=20261113-publish-clarity"></script>
+<script src="client-ui.js?v=20261113-publish-clarity"></script>
 </body>
 </html>
