@@ -44,7 +44,7 @@ function inject(){
 }
 
 class W{
-  constructor(el,c){this.el=el;this.raw=c||{};this.i=0;this.timer=null;this.displayCount=null;this.hovered=false;this.keyboardFocused=false;this.viewport=null;this.track=null;inject();this.init()}
+  constructor(el,c){this.el=el;this.raw=c||{};this.i=0;this.timer=null;this.displayCount=null;this.hovered=false;this.keyboardFocused=false;this.viewport=null;this.track=null;this.baseHeight=0;this.baseWidth=0;inject();this.init()}
   async init(){
     let payload=this.raw;
     if(this.raw.widgetId||this.raw.apiUrl){
@@ -150,11 +150,28 @@ class W{
   shouldPause(){
     return this.hovered||this.keyboardFocused||document.hidden||this.expandedVisible();
   }
+  measureBaseHeight(){
+    if(!this.track||this.expandedVisible())return;
+    const width=this.track.getBoundingClientRect().width;
+    if(!width||(this.baseHeight&&Math.abs(width-this.baseWidth)<1))return;
+    // The old carousel's collapsed height was its tallest card, independent
+    // of which cards happened to be in view. Measure that baseline once per width.
+    const heights=Array.from(this.track.children,card=>card.getBoundingClientRect().height);
+    if(heights.length){
+      this.baseHeight=Math.ceil(Math.max(...heights));
+      this.baseWidth=width;
+    }
+  }
   syncViewportHeight(){
     if(!this.viewport||!this.track)return;
-    const heights=this.visibleCards().map(card=>card.getBoundingClientRect().height);
-    if(!heights.length)return;
-    const height=Math.ceil(Math.max(...heights));
+    this.measureBaseHeight();
+    // Normal autoplay and arrow navigation MUST NEVER change section height.
+    // Only an expanded review/organization reply may exceed the stable baseline.
+    let height=this.baseHeight;
+    if(this.expandedVisible()){
+      const expandedHeights=this.visibleCards().map(card=>card.getBoundingClientRect().height);
+      height=Math.ceil(Math.max(height,...expandedHeights));
+    }
     if(height>0&&Math.abs((parseFloat(this.viewport.style.height)||0)-height)>1){
       this.viewport.style.height=height+'px';
     }
