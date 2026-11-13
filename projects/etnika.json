@@ -41,7 +41,7 @@
     "gridInitialItems": 6,
     "listInitialItems": 3,
     "loadMoreStep": 6,
-    "autoplay": false,
+    "autoplay": true,
     "autoplayDelay": 4500,
     "transitionMs": 320,
     "showAvatar": true,
