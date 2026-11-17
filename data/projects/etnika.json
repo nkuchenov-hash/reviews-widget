@@ -8,7 +8,7 @@
     "name": "Студия автопортрета Этника",
     "rating": 5,
     "ratingsCount": 253,
-    "reviewsCount": 229
+    "reviewsCount": 230
   },
   "profile": {
     "name": "Студия автопортрета Этника",
@@ -27,7 +27,7 @@
     "coverPhoto": "https://avatars.mds.yandex.net/get-altay/17783115/2a0000019b608d4a3ab885db124874909009/L",
     "logo": "https://avatars.mds.yandex.net/get-altay/19662431/2a0000019caeb9b57ce85fc2a09220a9d17b/M"
   },
-  "fetchedAt": "2026-11-16T19:34:03.337738+00:00",
+  "fetchedAt": "2026-11-17T03:49:55.843750+00:00",
   "reviews": [
     {
       "id": "e798uX5NfMbqvuPnz67iuEGxT_qYLAcm",
@@ -5305,6 +5305,25 @@
         "text": "Анастасия, благодарим вас за тёплые слова! ❤️\n\nНам очень приятно, что вы оценили нашу студию и работу администратора. Передадим ей вашу благодарность — это лучшая награда 😊\n\nЖдём вас снова в студии автопортрета Этника за новыми красивыми кадрами! 📸✨\n\nС творческим теплом,\nкоманда студии автопортрета Этника",
         "date": "2026-09-29T07:22:32.578Z"
       }
+    },
+    {
+      "id": "Br3g79xNCa71Cc2V0uP04fFWp5boOwO",
+      "author": "Алёна Красикова",
+      "authorPublicId": "051e0436xjgdym7a44f5cy1tt0",
+      "authorLevel": "Знаток города 3 уровня",
+      "avatar": "https://avatars.mds.yandex.net/get-yapic/36777/0r-6/islands-68",
+      "rating": 5,
+      "text": "Пришли с парнем на фотосессию все классно! администратор очень милая девушка все показала и рассказала ❤️",
+      "date": "2026-11-16T15:27:10.043Z",
+      "createdDate": "",
+      "edited": false,
+      "source": "yandex",
+      "url": "https://yandex.ru/maps/org/studiya_avtoportreta_etnika/136853819595/reviews/?reviews%5BpublicId%5D=051e0436xjgdym7a44f5cy1tt0&utm_source=review",
+      "likes": 0,
+      "dislikes": 0,
+      "photos": [],
+      "videos": [],
+      "businessResponse": null
     },
     {
       "id": "LbsJjCg56AFHQ69FhJ1e9zPuvjIGi3NfS",
